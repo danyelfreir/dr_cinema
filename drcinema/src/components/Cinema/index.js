@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, ImageBackground } from 'react-native';
+import { View, Text, Linking, ImageBackground, onPress, Pressable } from 'react-native';
 import styles from './styles';
 import { AntDesign } from '@expo/vector-icons';
 import backgroundImage from '../../resources/cinemaBackground.png';
@@ -12,7 +12,11 @@ const Cinema = (info) => {
           <Text style={styles.title}>{info.name}</Text>
         </View>
         <View>
-          <Pressable>
+          <Pressable
+            onPress={() => {
+              Linking.openURL(`https://${info.url}`);
+            }}
+          >
             <Text style={styles.url}>{info.url}</Text>
           </Pressable>
         </View>
