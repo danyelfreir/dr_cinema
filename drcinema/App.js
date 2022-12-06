@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { useState, useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import CinemaList from './src/views/CinemaList';
 import Router from './src/routes';
