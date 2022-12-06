@@ -1,13 +1,18 @@
 import React, { useState, useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Cinema from './src/components/Cinema';
+import CinemaList from './src/views/CinemaList';
+import Router from './src/routes';
 
 export default function App() {
   const name = 'Sambíóin Kringlunni';
+  const address = 'Kringlunni 4-6';
+  const phone = '555-5555';
   const url = 'www.sambio.com';
+  const description =
+    'Sambíóin Kringlunni var opnað árið 1996.\r\n\r\nÞað var fyrsta kvikmyndahúsið á íslandi sem bauð uppá THX hljóðkerfi í öllum sölum. Sambíóin Kringlunni er fyrsta kvikmyndahúsið á Íslandi sem býður uppá digital bíósýningar.';
   return (
     <View style={styles.container}>
-      <Cinema name={name} url={url} />
+      <Router />
     </View>
   );
 }
@@ -15,9 +20,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-    top: 50,
   },
 });
