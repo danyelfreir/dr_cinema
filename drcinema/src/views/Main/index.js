@@ -1,21 +1,29 @@
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUpcomingMoviesRequest } from '../../redux/actions/action';
-import fetchUpcomingMovies from '../../redux/actions/fetchUpcomingMovies';
+import fetchUpcomingMovies from '../../redux/actions/UpcomingMovies/fetchUpcomingMovies';
+import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
+import fetchCinemas from '../../redux/actions/Cinemas/fetchCinemas';
 
 const Main = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchUpcomingMovies());
+    dispatch(fetchAllMovies());
+    dispatch(fetchCinemas());
   }, []);
-  const movies = useSelector((state) => state.upcomingMovies);
+
+  const { upcomingMovies } = useSelector((state) => state.upcoming);
+  const { allMovies } = useSelector((state) => state.movies);
+  const { cinemas } = useSelector((state) => state.cinemas);
+
   return (
-    <View>
-      {movies.map((movie) => (
-        <Text>{movie.title}</Text>
+    <ScrollView>
+      {upcomingMovies.map((movie) => (
+        <Text key={movie.id}>{movie.title}</Text>
       ))}
-    </View>
+    </ScrollView>
   );
 };
 

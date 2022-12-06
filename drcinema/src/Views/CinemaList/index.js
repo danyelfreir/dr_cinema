@@ -33,7 +33,10 @@ const CinemaList = ({ navigation: { navigate } }) => {
 
   const getCinemas = async () => {
     try {
-      const response = await axios.get('http://api.kvikmyndir.is/theaters', config);
+      const response = await axios.get(
+        'http://api.kvikmyndir.is/theaters',
+        config
+      );
       sortCinemas(response.data);
       setCinemas(response.data);
     } catch (error) {
