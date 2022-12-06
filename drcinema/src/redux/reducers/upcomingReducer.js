@@ -2,7 +2,7 @@ import {
   FETCH_UPCOMING_MOVIES_ERROR,
   FETCH_UPCOMING_MOVIES_REQUEST,
   FETCH_UPCOMING_MOVIES_SUCCESS,
-} from '../actions/actionType';
+} from '../actions/UpcomingMovies/actionType';
 
 const initialState = {
   loading: false,
@@ -33,7 +33,7 @@ const upcomingReducer = (state = initialState, action) => {
       };
     default:
       return state;
-  }
+  };
 };
 
 export default upcomingReducer;

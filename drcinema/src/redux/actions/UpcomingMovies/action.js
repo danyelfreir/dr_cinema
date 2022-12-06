@@ -1,7 +1,7 @@
 import {
-  FETCH_UPCOMING_MOVIES_ERROR,
   FETCH_UPCOMING_MOVIES_REQUEST,
   FETCH_UPCOMING_MOVIES_SUCCESS,
+  FETCH_UPCOMING_MOVIES_ERROR,
 } from './actionType';
 
 export const fetchUpcomingMoviesRequest = () => ({
