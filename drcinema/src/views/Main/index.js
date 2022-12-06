@@ -1,28 +1,45 @@
-import React, { useEffect } from 'react';
-import { ScrollView, Text } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { FlatList, Pressable, ScrollView, Text } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchUpcomingMovies from '../../redux/actions/UpcomingMovies/fetchUpcomingMovies';
 import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
 import fetchCinemas from '../../redux/actions/Cinemas/fetchCinemas';
 
-const Main = () => {
+const Main = ({ navigation }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(fetchCinemas());
     dispatch(fetchUpcomingMovies());
     dispatch(fetchAllMovies());
-    dispatch(fetchCinemas());
   }, []);
 
-  const { upcomingMovies } = useSelector((state) => state.upcoming);
-  const { allMovies } = useSelector((state) => state.movies);
-  const { cinemas } = useSelector((state) => state.cinemas);
+  const {
+    cinemas: { allCinemas },
+    upcoming: { upcomingMovies },
+    movies: { allMovies },
+  } = useSelector((state) => state);
+
+  const onRender = ({ item, index }) => {
+    return (
+      <Pressable
+        key={item.id}
+        onPress={() =>
+          navigation.navigate('Movie', {
+            movie: item,
+            cinema: allCinemas[4],
+          })
+        }
+      >
+        <Text>{item.title}</Text>
+        {/* <Text>{item.name}</Text> */}
+      </Pressable>
+    );
+  };
 
   return (
     <ScrollView>
-      {upcomingMovies.map((movie) => (
-        <Text key={movie.id}>{movie.title}</Text>
-      ))}
+      <FlatList data={allMovies} renderItem={(movie) => onRender(movie)} />
     </ScrollView>
   );
 };

@@ -4,7 +4,6 @@ import { StyleSheet, View } from 'react-native';
 import Router from './src/routes';
 import { applyMiddleware, createStore } from 'redux';
 import reducers from './src/redux/reducers';
-import Main from './src/views/Main';
 import thunk from 'redux-thunk';
 
 export default function App() {
@@ -12,7 +11,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-        <Main />
+        <Router />
       </View>
     </Provider>
   );

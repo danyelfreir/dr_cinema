@@ -8,10 +8,10 @@ export const fetchCinemasRequest = () => ({
   type: FETCH_CINEMAS_REQUEST,
 });
 
-export const fetchCinemasSuccess = (cinemas) => ({
+export const fetchCinemasSuccess = (allCinemas) => ({
   type: FETCH_CINEMAS_SUCCESS,
   payload: {
-    cinemas,
+    allCinemas,
   },
 });
 

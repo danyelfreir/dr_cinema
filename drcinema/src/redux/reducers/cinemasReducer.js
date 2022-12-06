@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   loading: false,
-  cinemas: [],
+  allCinemas: [],
   error: null,
 };
 
@@ -22,13 +22,13 @@ const cinemasReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        cinemas: action.payload.cinemas,
+        allCinemas: action.payload.allCinemas,
       };
     case FETCH_CINEMAS_ERROR:
       return {
         ...state,
         loading: false,
-        cinemas: [],
+        allCinemas: [],
         error: action.payload.error,
       };
     default:
