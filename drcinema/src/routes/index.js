@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-import CinemaList from '../views/CinemaList';
+import CinemaList from '../components/CinemaList';
 import Cinema from '../views/Cinema';
 import Styles from './styles';
 

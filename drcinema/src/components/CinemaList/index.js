@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Pressable } from 'react-native';
 import axios, { isCancel, AxiosError } from 'axios';
 import xtoken from '../../security/index';
-import Cinema from '../../components/CinemaListItem';
+import Cinema from '../CinemaListItem';
 import styles from './styles';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const CinemaList = ({ navigation: { navigate } }) => {
   const [cinemas, setCinemas] = React.useState([]);
@@ -33,7 +32,10 @@ const CinemaList = ({ navigation: { navigate } }) => {
 
   const getCinemas = async () => {
     try {
-      const response = await axios.get('http://api.kvikmyndir.is/theaters', config);
+      const response = await axios.get(
+        'http://api.kvikmyndir.is/theaters',
+        config
+      );
       sortCinemas(response.data);
       setCinemas(response.data);
     } catch (error) {
