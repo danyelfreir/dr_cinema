@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Pressable, View, Text, Linking } from 'react-native';
+import { Pressable, View, Text, Linking } from 'react-native';
 import Seperator from '../Seperator/index.jsx';
 import styles from './styles.js';
 
