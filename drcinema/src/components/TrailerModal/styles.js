@@ -2,27 +2,26 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    height: 208,
+    height: 220,
     backgroundColor: 'dodgerblue',
     overflow: 'hidden',
-    padding: 6,
     borderRadius: 8,
-    borderTopRightRadius: 0,
+    paddingTop: 6,
   },
-  title: {
+  bottom: {
     backgroundColor: 'dodgerblue',
-    height: 30,
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
-    width: 30,
-    alignSelf: 'flex-end',
+    height: 50,
+    borderBottomRightRadius: 15,
+    borderBottomLeftRadius: 15,
+    width: 50,
+    alignSelf: 'center',
   },
   closeButton: {
     alignItems: 'flex-end',
   },
   icon: {
     margin: 2.5,
-    fontSize: 25,
+    fontSize: 40,
     color: 'white',
   },
 });
