@@ -1,19 +1,19 @@
-import React, { useState, useRef } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Router from './src/routes';
+import React from 'react';
 import { Provider } from 'react-redux';
+import { StyleSheet, View } from 'react-native';
+import Router from './src/routes';
+import { applyMiddleware, createStore } from 'redux';
+import reducers from './src/redux/reducers';
+import thunk from 'redux-thunk';
 
 export default function App() {
-  const name = 'Sambíóin Kringlunni';
-  const address = 'Kringlunni 4-6';
-  const phone = '555-5555';
-  const url = 'www.sambio.com';
-  const description =
-    'Sambíóin Kringlunni var opnað árið 1996.\r\n\r\nÞað var fyrsta kvikmyndahúsið á íslandi sem bauð uppá THX hljóðkerfi í öllum sölum. Sambíóin Kringlunni er fyrsta kvikmyndahúsið á Íslandi sem býður uppá digital bíósýningar.';
+  const store = createStore(reducers, applyMiddleware(thunk));
   return (
-    <View style={styles.container}>
-      <Router />
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <Router />
+      </View>
+    </Provider>
   );
 }
 

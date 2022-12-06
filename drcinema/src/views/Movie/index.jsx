@@ -6,7 +6,9 @@ import styles from './styles';
 import Showtimes from '../../components/Showtimes';
 import Seperator from '../../components/Seperator';
 
-const Movie = ({ movie, cinema }) => {
+const Movie = ({ navigation, route: { params } }) => {
+  const movie = params.movie;
+  const cinema = params.cinema;
   const imageBaseUrl = 'http://image.tmdb.org/t/p/original';
   const { width: winWidth } = Dimensions.get('window');
   const [movieBackdrops, setMovieBackdrops] = useState([]);
@@ -134,27 +136,32 @@ const Movie = ({ movie, cinema }) => {
           </View>
         </View>
         <View style={styles.trailersContainer}>
-          <Carousel
-            itemWidth={winWidth}
-            sliderWidth={winWidth}
-            data={movie.trailers[0].results}
-            renderItem={(trailer) => renderTrailer(trailer)}
-            onSnapToItem={(index) => setActiveTrailer(index)}
-          />
-          <Pagination
-            dotsLength={movie.trailers[0].results.length}
-            activeDotIndex={activeTrailer}
-            containerStyle={{ marginTop: -100 }}
-            dotStyle={{
-              width: 10,
-              height: 10,
-              borderRadius: 5,
-              marginHorizontal: 8,
-              backgroundColor: 'rgba(255, 255, 255, 0.92)',
-            }}
-            inactiveDotOpacity={0.4}
-            inactiveDotScale={0.6}
-          />
+          {console.log(movie.trailers)}
+          {movie.trailers.length > 0 && (
+            <>
+              <Carousel
+                itemWidth={winWidth}
+                sliderWidth={winWidth}
+                data={movie.trailers[0].results}
+                renderItem={(trailer) => renderTrailer(trailer)}
+                onSnapToItem={(index) => setActiveTrailer(index)}
+              />
+              <Pagination
+                dotsLength={movie.trailers[0].results.length}
+                activeDotIndex={activeTrailer}
+                containerStyle={{ marginTop: -100 }}
+                dotStyle={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: 5,
+                  marginHorizontal: 8,
+                  backgroundColor: 'rgba(255, 255, 255, 0.92)',
+                }}
+                inactiveDotOpacity={0.4}
+                inactiveDotScale={0.6}
+              />
+            </>
+          )}
         </View>
       </ScrollView>
     </>

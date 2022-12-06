@@ -4,7 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 import Styles from './styles';
-import Main from '../Views/Main';
+import Main from '../views/Main';
+import Cinema from '../views/Cinema';
 
 const Router = () => {
   return (
