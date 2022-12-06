@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import CinemaList from './src/views/CinemaList';
 import Router from './src/routes';
+import { Provider } from 'react-redux';
 
 export default function App() {
   const name = 'Sambíóin Kringlunni';
