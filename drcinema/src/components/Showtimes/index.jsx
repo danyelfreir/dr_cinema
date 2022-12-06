@@ -1,21 +1,39 @@
 import React from 'react';
-import { FlatList, Pressable, View, Text } from 'react-native';
+import { FlatList, Pressable, View, Text, Linking } from 'react-native';
+import Seperator from '../Seperator/index.jsx';
+import styles from './styles.js';
 
-const Showtimes = ({ data }) => {
-  const renderItem = ({ item, index }) => {
-    console.log(item);
-    return (
-      <Pressable>
-        <View>
-          <Text>{item.cinema.name}</Text>
-        </View>
-      </Pressable>
-    );
-  };
+const Showtimes = ({ showtimes, cinema }) => {
+  // console.log(showtimes);
+  const renderItem = ({ item, index }) => (
+    <>
+      {item.schedule.map((timeslot) => (
+        <Pressable
+          style={styles.timeslotContainer}
+          key={item.cinema.id}
+          onPress={() => Linking.openURL(timeslot.purchase_url)}
+        >
+          <Text style={styles.timeslot}>{`Kl. ${timeslot.time}`}</Text>
+          <Text style={styles.buyButton}>Kaupa miða</Text>
+        </Pressable>
+      ))}
+    </>
+  );
+  console.log(showtimes.schedule);
   return (
-    <View>
-      <Text>Kaupa miða:</Text>
-      <FlatList data={data} renderItem={(item) => renderItem(item)} />
+    <View style={styles.container}>
+      <Text style={styles.timeslotTitle}>Sýningar í {cinema.name}</Text>
+      <Seperator width={200} />
+      {/* <FlatList data={showtimes} renderItem={(item) => renderItem(item)} /> */}
+      {showtimes.schedule.map((timeslot) => (
+        <Pressable
+          style={styles.timeslotContainer}
+          onPress={() => Linking.openURL(timeslot.purchase_url)}
+        >
+          <Text style={styles.timeslot}>{`Kl. ${timeslot.time}`}</Text>
+          <Text style={styles.buyButton}>Kaupa miða</Text>
+        </Pressable>
+      ))}
     </View>
   );
 };

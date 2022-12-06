@@ -14,11 +14,15 @@ export default StyleSheet.create({
     paddingBottom: 10,
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#FFF',
   },
-  container: {},
+  container: {
+    backgroundColor: '#141414',
+  },
   label: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: colors.gray,
   },
   title: {
     fontSize: 28,
@@ -26,22 +30,47 @@ export default StyleSheet.create({
     marginBottom: 20,
   },
   description: {
-    paddingBottom: 20,
+    marginTop: 20,
+    marginBottom: 20,
+    color: '#FFF',
   },
   poster: {
+    height: 175,
+    width: 100,
+    marginTop: -75,
+  },
+  body: {
+    margin: 20,
+  },
+  informationContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  informationText: {
+    color: '#C4C4C4',
+    marginLeft: 20,
+  },
+  informationTextContainer: {
+    width: 250,
+  },
+  carouselItem: {
     height: 200,
   },
-  body: {},
-  paginationContainer: {
-    position: 'absolute',
-    top: winHeight / 3,
-    left: winWidth / 6,
+  showtimesContainer: {
+    marginTop: 20,
+    marginBottom: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  paginationDots: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.92)',
+  seperatorContainer: {
+    maxWidth: '80%',
+    flexDirection: 'row',
+    alignItems: 'space-between',
+    justifyContent: 'space-between',
   },
-  paginationInactiveDots: {},
+  trailersContainer: {
+    paddingTop: 20,
+  },
 });

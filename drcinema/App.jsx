@@ -5,9 +5,13 @@ import { createStore } from 'redux';
 import upcomingReducer from './src/redux/reducers/upcomingReducer';
 import Movie from './src/views/Movie';
 
+// TEMP
+import MovieInfo from './DontWorryDarling.json';
+import Cinema from './Cinema.json';
+
 const App = () => (
   <Provider store={createStore(upcomingReducer)}>
-    <Movie />
+    <Movie movie={MovieInfo} cinema={Cinema} />
   </Provider>
 );
 
