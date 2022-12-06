@@ -3,9 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
-
-// import CinemaList from '../views/CinemaList';
-import Cinema from '../Views/Cinema';
 import Styles from './styles';
 import Main from '../Views/Main';
 
