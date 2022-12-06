@@ -1,32 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
-import fetchUpcomingMovies from '../../redux/actions/UpcomingMovies/fetchUpcomingMovies';
-import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
-import fetchCinemas from '../../redux/actions/Cinemas/fetchCinemas';
-import styles from './styles.js';
+import { View, Text, Pressable } from 'react-native';
+import styles from './styles';
 import UpcomingMoviesCarousel from '../../components/UpcomingMoviesCarousel';
+import { token } from '../../security/token';
 import HomeButton from '../../components/HomeButton';
 
 const CINEMAS = true;
 const UPCOMING = false;
 
-const Main = ({ navigation }) => {
-  const dispatch = useDispatch();
-
+const Main = () => {
   const [visibleContent, setvisibleContent] = useState(CINEMAS);
 
-  useEffect(() => {
-    dispatch(fetchCinemas());
-    dispatch(fetchUpcomingMovies());
-    dispatch(fetchAllMovies());
-  }, []);
-
-  const {
-    cinemas: { allCinemas },
-    upcoming: { upcomingMovies },
-    movies: { allMovies },
-  } = useSelector((state) => state);
+  const config = {
+    headers: {
+      'x-access-token': token,
+    },
+  };
 
   return (
     <View style={styles.container}>
@@ -34,7 +23,7 @@ const Main = ({ navigation }) => {
         {visibleContent ? (
           <Text>CinemaList Here</Text>
         ) : (
-          <UpcomingMoviesCarousel data={upcomingMovies} />
+          <UpcomingMoviesCarousel data={upComingMovies} />
         )}
       </View>
       {/* <CinemaList /> */}

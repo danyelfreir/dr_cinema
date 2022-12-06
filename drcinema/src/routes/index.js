@@ -4,7 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 import Styles from './styles';
-import Main from '../Views/Main';
+import Main from '../views/Main';
+import Cinema from '../views/Cinema';
 
 const Router = () => {
   return (
@@ -22,14 +23,16 @@ const Router = () => {
             headerTitleAlign: 'center',
           }}
         />
-        {/* <Stack.Screen
-          name="Kvikmyndahús"
-          component={CinemaList}
-          options={{
-            ...Styles.header,
-            title: 'CinemaList',
-          }}
-        /> */}
+        {
+          <Stack.Screen
+            name="Kvikmyndahús"
+            component={CinemaList}
+            options={{
+              ...Styles.header,
+              title: 'CinemaList',
+            }}
+          />
+        }
         <Stack.Screen
           name="Cinema"
           component={Cinema}

@@ -11,8 +11,11 @@ const headers = {
   'x-access-token': token.token,
 };
 
-const fetchCinemas = () => (dispatch) => {
+const fetchCinemas = () => async (dispatch) => {
   dispatch(fetchCinemasRequest);
+  const response = await fetch(URL, { headers });
+  const data = await response.json();
+
   fetch(URL, { headers })
     .then((response) =>
       response
