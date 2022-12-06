@@ -4,23 +4,12 @@ import styles from './styles';
 import UpcomingMoviesCarousel from '../../components/UpcomingMoviesCarousel';
 import { token } from '../../security/token';
 import HomeButton from '../../components/HomeButton';
-import axios from 'axios';
+
+const CINEMAS = true;
+const UPCOMING = false;
 
 const Main = () => {
-  const [cinemasVisible, setCinemasVisible] = useState(true);
-  const [upComingMovies, setUpComingMovies] = useState([]);
-
-  useEffect(() => {
-    getUpcomingMovies();
-  }, []);
-
-  const getUpcomingMovies = async () => {
-    const response = await axios.get(
-      'http://api.kvikmyndir.is/upcoming',
-      config
-    );
-    setUpComingMovies(response.data);
-  };
+  const [visibleContent, setvisibleContent] = useState(CINEMAS);
 
   const config = {
     headers: {
@@ -31,7 +20,7 @@ const Main = () => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        {cinemasVisible ? (
+        {visibleContent ? (
           <Text>CinemaList Here</Text>
         ) : (
           <UpcomingMoviesCarousel data={upComingMovies} />
@@ -41,11 +30,11 @@ const Main = () => {
       <View style={styles.buttonContainer}>
         <HomeButton
           title="Kvikmyndahús"
-          onPress={() => setCinemasVisible(true)}
+          onPress={() => setvisibleContent(CINEMAS)}
         />
         <HomeButton
           title="Væntanlegt í bíó"
-          onPress={() => setCinemasVisible(false)}
+          onPress={() => setvisibleContent(UPCOMING)}
         />
       </View>
     </View>
