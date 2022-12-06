@@ -11,15 +11,12 @@ const TrailerModal = ({ isVisible, closeModal, url }) => {
       isVisible={isVisible}
       onBackButtonPress={closeModal}
       onBackdropPress={closeModal}
+      onSwipeComplete={closeModal}
+      swipeDirection={['up']}
       backdropOpacity={0.85}
       animationIn="zoomIn"
       animationOut="zoomOut"
     >
-      <View style={styles.title}>
-        <Pressable style={styles.closeButton} onPress={closeModal}>
-          <AntDesign name="closecircleo" style={styles.icon} />
-        </Pressable>
-      </View>
       <View style={styles.container}>
         <YoutubePlayer height={'100%'} play={false} videoId={url} />
       </View>

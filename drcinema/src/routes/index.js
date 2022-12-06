@@ -3,23 +3,33 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
-
-import CinemaList from '../components/CinemaList';
-import Cinema from '../views/Cinema';
 import Styles from './styles';
+import Main from '../Views/Main';
 
 const Router = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CinemaList">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
+          name="Home"
+          component={Main}
+          options={{
+            title: 'Dr.Cinema',
+            headerStyle: {
+              backgroundColor: 'dodgerblue',
+            },
+            headerTitleStyle: { color: 'white' },
+            headerTitleAlign: 'center',
+          }}
+        />
+        {/* <Stack.Screen
           name="Kvikmyndahús"
           component={CinemaList}
           options={{
             ...Styles.header,
             title: 'CinemaList',
           }}
-        />
+        /> */}
         <Stack.Screen
           name="Cinema"
           component={Cinema}

@@ -8,6 +8,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
+    shadowOffset: { width: 10, height: 200 },
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
   },
   text: {
     color: 'white',
