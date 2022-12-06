@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Cinema from './src/Views/Cinema';
+import CinemaList from './src/views/CinemaList';
+import Router from './src/routes';
 
 export default function App() {
   const name = 'Sambíóin Kringlunni';
@@ -11,7 +12,7 @@ export default function App() {
     'Sambíóin Kringlunni var opnað árið 1996.\r\n\r\nÞað var fyrsta kvikmyndahúsið á íslandi sem bauð uppá THX hljóðkerfi í öllum sölum. Sambíóin Kringlunni er fyrsta kvikmyndahúsið á Íslandi sem býður uppá digital bíósýningar.';
   return (
     <View style={styles.container}>
-      <Cinema name={name} address={address} phone={phone} url={url} description={description} />
+      <Router />
     </View>
   );
 }
@@ -19,9 +20,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    alignContent: 'center',
-    top: 50,
-    backgroundColor: 'black',
   },
 });

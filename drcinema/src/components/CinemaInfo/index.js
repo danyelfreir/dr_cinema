@@ -3,6 +3,7 @@ import { View, Text, Linking, Pressable } from 'react-native';
 import styles from './styles';
 
 const CinemaInfo = (info) => {
+  console.log(info);
   return (
     <View style={styles.infoContainer}>
       <View style={styles.title}>
@@ -12,7 +13,7 @@ const CinemaInfo = (info) => {
         <Text style={styles.address}>{info.address}</Text>
         <Text style={styles.phone}>{info.phone}</Text>
       </View>
-      <View>
+      <View style={styles.urlContainer}>
         <Pressable
           onPress={() => {
             Linking.openURL(`https://${info.url}`);

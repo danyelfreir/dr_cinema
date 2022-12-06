@@ -3,19 +3,19 @@ import colors from '../../styles';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     width: '100%',
     backgroundColor: 'black',
   },
-  logoContainer: {
-    width: '100%',
-    height: 150,
-    justifyContent: 'center',
-    flex: 0.2,
+  error: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: colors.white,
   },
-  cinemaInfo: {
+  errorContainer: {
     flex: 1,
-    alignItems: 'center',
-    width: '100%',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    width: 400,
+    padding: 10,
   },
 });
