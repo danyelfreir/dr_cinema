@@ -35,8 +35,8 @@ export default StyleSheet.create({
     color: '#FFF',
   },
   poster: {
-    height: 175,
-    width: 100,
+    height: 200,
+    width: 125,
     marginTop: -75,
   },
   body: {
@@ -44,13 +44,29 @@ export default StyleSheet.create({
   },
   informationContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    // justifyContent: 'space-around',
+    // alignItems: 'center',
     marginBottom: 20,
   },
-  informationText: {
+  informationTextPair: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 2,
+  },
+  informationTextKey: {
+    width: '47%',
     color: '#C4C4C4',
-    marginLeft: 20,
+    fontWeight: 'bold',
+    // marginLeft: 20,
+  },
+  informationTextValue: {
+    width: '53%',
+    color: '#C4C4C4',
+    marginLeft: 5,
+    alignSelf: 'flex-end',
+    // maxWidth: 100,
   },
   informationTextContainer: {
     width: 250,

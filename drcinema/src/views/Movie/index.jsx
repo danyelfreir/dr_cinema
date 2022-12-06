@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, Text, Image, Dimensions } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import styles from './styles';
 import Showtimes from '../../components/Showtimes';
@@ -10,6 +10,7 @@ const Movie = ({ movie, cinema }) => {
   const imageBaseUrl = 'http://image.tmdb.org/t/p/original';
   const { width: winWidth } = Dimensions.get('window');
   const [movieBackdrops, setMovieBackdrops] = useState([]);
+  const [activeTrailer, setActiveTrailer] = useState(0);
 
   const headers = {
     'x-access-token':
@@ -35,6 +36,14 @@ const Movie = ({ movie, cinema }) => {
     />
   );
 
+  const renderTrailer = ({ item, index }) => (
+    <YoutubePlayer
+      webViewStyle={styles.trailer}
+      height={300}
+      videoId={item.key}
+    />
+  );
+
   useEffect(() => getBackdrops(), []);
 
   return (
@@ -46,8 +55,8 @@ const Movie = ({ movie, cinema }) => {
       </View>
       <ScrollView style={styles.container}>
         <Carousel
-          itemWidth={400}
-          sliderWidth={400}
+          itemWidth={winWidth}
+          sliderWidth={winWidth}
           data={movieBackdrops}
           renderItem={(img) => renderImage(img)}
           autoplay
@@ -56,35 +65,48 @@ const Movie = ({ movie, cinema }) => {
           <View style={styles.informationContainer}>
             <Image style={styles.poster} source={{ uri: movie.poster }} />
             <View style={styles.informationTextContainer}>
-              <Text style={styles.informationText}>
-                {movie.durationMinutes} mín
-              </Text>
-              <Text style={styles.informationText}>
-                Aldurstakmark {movie.certificateIS}
-              </Text>
-              {movie.directors_abridged.map((director) => (
-                <Text style={styles.informationText}>
-                  Leikstjóri: {director.name}
+              <View style={styles.informationTextPair}>
+                <Text style={styles.informationTextKey}>Lengd:</Text>
+                <Text style={styles.informationTextValue}>
+                  {movie.durationMinutes} mín
                 </Text>
-              ))}
-              <Text style={styles.informationText}>
-                Leikarar:{' '}
-                {movie.actors_abridged.map(
-                  (actor, index) =>
-                    `${actor.name}${
-                      index < movie.actors_abridged.length - 1 ? ', ' : ''
-                    }`
-                )}
-              </Text>
-              <Text style={styles.informationText}>
-                Flokkar:{' '}
-                {movie.genres.map(
-                  (genre, index) =>
-                    `${genre.Name}${
-                      index < movie.genres.length - 1 ? ', ' : ''
-                    }`
-                )}
-              </Text>
+              </View>
+              <View style={styles.informationTextPair}>
+                <Text style={styles.informationTextKey}>Aldurstakmark:</Text>
+                <Text style={styles.informationTextValue}>
+                  {movie.certificateIS}
+                </Text>
+              </View>
+              <View style={styles.informationTextPair}>
+                <Text style={styles.informationTextKey}>Leikstjóri:</Text>
+                {movie.directors_abridged.map((director) => (
+                  <Text style={styles.informationTextValue}>
+                    {director.name}
+                  </Text>
+                ))}
+              </View>
+              <View style={styles.informationTextPair}>
+                <Text style={styles.informationTextKey}>Leikarar:</Text>
+                <Text style={styles.informationTextValue}>
+                  {movie.actors_abridged.map(
+                    (actor, index) =>
+                      `${actor.name}${
+                        index < movie.actors_abridged.length - 1 ? ', ' : ''
+                      }`
+                  )}
+                </Text>
+              </View>
+              <View style={styles.informationTextPair}>
+                <Text style={styles.informationTextKey}>Flokkar:</Text>
+                <Text style={styles.informationTextValue}>
+                  {movie.genres.map(
+                    (genre, index) =>
+                      `${genre.Name}${
+                        index < movie.genres.length - 1 ? ', ' : ''
+                      }`
+                  )}
+                </Text>
+              </View>
             </View>
           </View>
           <View style={styles.seperatorContainer}>
@@ -110,15 +132,29 @@ const Movie = ({ movie, cinema }) => {
             <Text style={styles.label}>Stiklur </Text>
             <Seperator width="100%" />
           </View>
-          <View style={styles.trailersContainer}>
-            {movie.trailers[0].results.map((trailer) => (
-              <YoutubePlayer
-                webViewStyle={styles.trailer}
-                height={300}
-                videoId={trailer.key}
-              />
-            ))}
-          </View>
+        </View>
+        <View style={styles.trailersContainer}>
+          <Carousel
+            itemWidth={winWidth}
+            sliderWidth={winWidth}
+            data={movie.trailers[0].results}
+            renderItem={(trailer) => renderTrailer(trailer)}
+            onSnapToItem={(index) => setActiveTrailer(index)}
+          />
+          <Pagination
+            dotsLength={movie.trailers[0].results.length}
+            activeDotIndex={activeTrailer}
+            containerStyle={{ marginTop: -100 }}
+            dotStyle={{
+              width: 10,
+              height: 10,
+              borderRadius: 5,
+              marginHorizontal: 8,
+              backgroundColor: 'rgba(255, 255, 255, 0.92)',
+            }}
+            inactiveDotOpacity={0.4}
+            inactiveDotScale={0.6}
+          />
         </View>
       </ScrollView>
     </>
