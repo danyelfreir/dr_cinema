@@ -8,6 +8,15 @@ export default StyleSheet.create({
     height: 430,
     shadowColor: 'red',
   },
+  trailer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  trailerText: {
+    color: 'white',
+    padding: 10,
+  },
   name: {
     fontWeight: 'bold',
     fontSize: 20,

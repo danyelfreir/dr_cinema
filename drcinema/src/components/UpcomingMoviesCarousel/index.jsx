@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, Image, Dimensions } from 'react-native';
 import styles from './styles';
 import Carousel from 'react-native-snap-carousel';
 import UpcomingMovieItem from '../UpcomingMovieItem';
 
-const UpcomingMoviesCarousel = (props) => {
+const UpcomingMoviesCarousel = ({ data }) => {
   const { width: width } = Dimensions.get('screen');
 
   const renderItem = ({ item, index }) => {
-    return <UpcomingMovieItem {...item} onPress={() => console.log(item.id)} />;
+    return <UpcomingMovieItem {...item} />;
   };
 
   return (
@@ -19,7 +19,7 @@ const UpcomingMoviesCarousel = (props) => {
         width: '100%',
       }}
     >
-      <Carousel itemWidth={250} sliderWidth={width} data={props.data} renderItem={renderItem} />
+      <Carousel itemWidth={250} sliderWidth={width} data={data} renderItem={renderItem} />
     </View>
   );
 };
