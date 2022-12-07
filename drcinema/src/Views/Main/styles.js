@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'tomato',
   },
   content: {
     width: '100%',
@@ -16,8 +15,13 @@ export default StyleSheet.create({
     paddingBottom: 24,
     paddingTop: 24,
     justifyContent: 'space-evenly',
-    width: '100%',
+    alignItems: 'center',
+    width: '105%',
     flexDirection: 'row',
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
+    alignSelf: 'center',
+    margin: 0,
+    elevation: 5,
+    shadowColor: 'black',
   },
 });

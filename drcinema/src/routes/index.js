@@ -6,6 +6,7 @@ const Stack = createStackNavigator();
 import Styles from './styles';
 import Main from '../views/Main';
 import Cinema from '../views/Cinema';
+import CinemaList from '../components/CinemaList';
 
 const Router = () => {
   return (
@@ -23,14 +24,14 @@ const Router = () => {
             headerTitleAlign: 'center',
           }}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Kvikmyndahús"
           component={CinemaList}
           options={{
             ...Styles.header,
             title: 'CinemaList',
           }}
-        /> */}
+        />
         <Stack.Screen
           name="Cinema"
           component={Cinema}

@@ -1,79 +1,25 @@
-import React from 'react';
-import { View, Text, FlatList, Pressable } from 'react-native';
-import axios, { isCancel, AxiosError } from 'axios';
-import xtoken from '../../security/index';
-import Cinema from '../CinemaListItem';
+import React, { useEffect } from 'react';
+import { View, FlatList, Pressable } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import CinemaListItem from '../CinemaListItem';
 import styles from './styles';
+import fetchUpcomingMovies from '../../redux/actions/UpcomingMovies/fetchUpcomingMovies';
+import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
+import fetchCinemas from '../../redux/actions/Cinemas/fetchCinemas';
 
-const CinemaList = ({ navigation: { navigate } }) => {
-  const [cinemas, setCinemas] = React.useState([]);
-  const [error, setError] = React.useState(null);
-  const [refreshing, setRefreshing] = React.useState(false);
-
-  const token = xtoken.token;
-
-  let config = {
-    headers: {
-      'x-access-token': token,
-    },
-  };
-
-  const sortCinemas = (cinemas) => {
-    return cinemas.sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
-  };
-
-  const getCinemas = async () => {
-    try {
-      const response = await axios.get(
-        'http://api.kvikmyndir.is/theaters',
-        config
-      );
-      sortCinemas(response.data);
-      setCinemas(response.data);
-    } catch (error) {
-      setError(error);
-    }
-  };
-
-  const handleRefresh = () => {
-    setRefreshing(true);
-    getCinemas().then(() => setRefreshing(false));
-  };
-
-  React.useEffect(() => {
-    getCinemas();
-  }, []);
-
-  if (error) {
-    return (
-      <View style={styles.errorContainer}>
-        <Text style={styles.error}>Error: {error.message}</Text>
-      </View>
-    );
-  }
-
+const CinemaList = ({ data, navigation: { navigate } }) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={cinemas}
+        data={data}
         renderItem={({ item }) => (
           <View>
             <Pressable onPress={() => navigate('Cinema', item)}>
-              <Cinema item={item} />
+              <CinemaListItem item={item} />
             </Pressable>
           </View>
         )}
         keyExtractor={(item) => item.id}
-        refreshing={refreshing}
-        onRefresh={handleRefresh}
       />
     </View>
   );
