@@ -1,25 +1,45 @@
-import token from '../security/index';
+import { token } from '../security/index';
 
-class MovieService {
+export default class MovieService {
   constructor() {
     this.URL = 'https://api.kvikmyndir.is/';
     this.headers = {
       'Content-Type': 'application/json',
-      'x-access-token': token.token,
+      'x-access-token': token,
     };
   }
 
-  getImages(imdbId) {
-    fetch(`${this.URL}images?imdbid=${imdbId}`, { headers })
-      .then((response) =>
-        response
-          .json()
-          .then((data) => {
-            const backdrops = data[0].results;
-            return backdrops;
-          })
-          .catch((err) => console.log(err))
-      )
-      .catch((err) => console.log(err));
+  async getMovies() {
+    const response = await fetch(`${this.URL}movies/`, {
+      headers: this.headers,
+    });
+    if (response.status !== 200) {
+      return {
+        movies: [],
+        error: response.message,
+      };
+    }
+    const movies = await response.json();
+    if (!movies) {
+      return {
+        movies: [],
+        error: 'An error occurred while parsing data. Please try again later',
+      };
+    }
+    return {
+      movies,
+      error: null,
+    };
+  }
+
+  async getImages(imdbId) {
+    const response = await fetch(`${this.URL}images?imdbid=${imdbId}`, {
+      headers: this.headers,
+    });
+    const data = await response.json();
+    if (data.error) return [];
+    if (data.Message) return [];
+    const backdrops = data[0].results;
+    return backdrops;
   }
 }

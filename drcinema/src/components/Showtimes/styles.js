@@ -26,14 +26,8 @@ export default StyleSheet.create({
     fontSize: 18,
   },
   buyButton: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: colors.red,
-    textShadowColor: 'rgba(0, 0, 0, 0.45)',
-    textShadowOffset: {
-      width: -1,
-      height: 1,
-    },
-    textShadowRadius: 2,
+    color: colors.blue,
   },
 });

@@ -39,13 +39,14 @@ export default StyleSheet.create({
     width: 125,
     marginTop: -75,
   },
+  backdropPlaceholder: {
+    height: 200,
+  },
   body: {
     margin: 20,
   },
   informationContainer: {
     flexDirection: 'row',
-    // justifyContent: 'space-around',
-    // alignItems: 'center',
     marginBottom: 20,
   },
   informationTextPair: {

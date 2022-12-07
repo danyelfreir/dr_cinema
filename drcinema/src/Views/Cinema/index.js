@@ -7,15 +7,13 @@ import CinemaLogo from '../../components/CinemaLogo';
 import MovieList from '../../components/MovieList';
 import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
 
-const Cinema = ({ route: { params } }) => {
+const Cinema = ({ navigation, route: { params } }) => {
   // const dispatch = useDispatch();
   const [movies, setMovies] = useState([]);
 
   const {
     movies: { allMovies },
   } = useSelector((state) => state);
-
-  console.log(params.id);
 
   useEffect(() => {
     const myMovies = allMovies.filter((movie) =>
@@ -45,7 +43,7 @@ const Cinema = ({ route: { params } }) => {
         />
       </View>
       <View style={styles.movies}>
-        <MovieList data={movies} />
+        <MovieList data={movies} cinema={params} navigation={navigation} />
       </View>
     </View>
   );

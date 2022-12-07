@@ -3,7 +3,6 @@ import { View, Text, Linking, Pressable } from 'react-native';
 import styles from './styles';
 
 const CinemaInfo = (info) => {
-  console.log(info);
   return (
     <View style={styles.infoContainer}>
       <View style={styles.title}>

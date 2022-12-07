@@ -3,24 +3,17 @@ import {
   fetchUpcomingMoviesSuccess,
   fetchUpcomingMoviesError,
 } from './action';
-import { token } from '../../../security/index';
+import UpcomingService from '../../../services/UpcomingService';
 
-const URL = 'https://api.kvikmyndir.is/upcoming';
-const headers = {
-  'Content-Type': 'application/json',
-  'x-access-token': token,
-};
+const upcomingService = new UpcomingService();
 
-const fetchUpcomingMovies = () => (dispatch) => {
+const fetchUpcomingMovies = () => async (dispatch) => {
   dispatch(fetchUpcomingMoviesRequest());
-  fetch(URL, { headers })
-    .then((response) =>
-      response
-        .json()
-        .then((data) => dispatch(fetchUpcomingMoviesSuccess(data)))
-        .catch((err) => dispatch(fetchUpcomingMoviesError(err)))
-    )
-    .catch((err) => dispatch(fetchUpcomingMoviesError(err)));
+  const { upcomingMovies, error } = await upcomingService.getUpcomingMovies();
+  if (error) {
+    return dispatch(fetchUpcomingMoviesError(error));
+  }
+  return dispatch(fetchUpcomingMoviesSuccess(upcomingMovies));
 };
 
 export default fetchUpcomingMovies;

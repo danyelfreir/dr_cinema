@@ -3,10 +3,14 @@ import { View, Text, FlatList, Pressable } from 'react-native';
 import Movie from '../Movie';
 import styles from './styles';
 
-const MovieList = (props) => {
+const MovieList = ({ data, cinema, navigation }) => {
   const renderItem = ({ item }) => {
     return (
-      <Pressable>
+      <Pressable
+        onPress={() =>
+          navigation.navigate('Movie', { movie: item, cinema: cinema })
+        }
+      >
         <Movie item={item} />
       </Pressable>
     );
@@ -15,7 +19,7 @@ const MovieList = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Sýningar</Text>
-      <FlatList data={props.data} horizontal={true} renderItem={renderItem} />
+      <FlatList data={data} horizontal={true} renderItem={renderItem} />
     </View>
   );
 };
