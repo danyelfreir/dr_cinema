@@ -6,7 +6,7 @@ import styles from './styles';
 const MovieList = (props) => {
   const renderItem = ({ item }) => {
     return (
-      <Pressable>
+      <Pressable style={styles.item}>
         <Movie item={item} />
       </Pressable>
     );

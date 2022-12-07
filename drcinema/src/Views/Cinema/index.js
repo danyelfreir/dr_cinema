@@ -7,28 +7,18 @@ import CinemaLogo from '../../components/CinemaLogo';
 import MovieList from '../../components/MovieList';
 import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
 
-const Cinema = ({ route: { params } }) => {
-  // const dispatch = useDispatch();
-  const [movies, setMovies] = useState([]);
+const Cinema = ({ navigation, route: { params } }) => {
+  const findMyMovies = ({ allMovies }) => {
+    return allMovies.filter((movie) =>
+      movie.showtimes.some((show) => show.cinema.id === params.id)
+    );
+  };
 
-  const {
-    movies: { allMovies },
-  } = useSelector((state) => state);
-
-  console.log(params.id);
+  const movies = findMyMovies(useSelector((state) => state.movies));
 
   useEffect(() => {
-    const myMovies = allMovies.filter((movie) =>
-      movie.showtimes.some((e) => e.cinema.id === params.id)
-    );
-    setMovies(myMovies);
+    navigation.setOptions({ title: params.name });
   }, []);
-
-  // useEffect(() => {
-  // allMovies.filter((movie) => {
-  // movie.some((e) => console.log(e));
-  // });
-  // }, []);
 
   return (
     <View style={styles.container}>

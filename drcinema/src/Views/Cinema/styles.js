@@ -9,7 +9,7 @@ export default StyleSheet.create({
   },
   logoContainer: {
     width: '100%',
-    height: 150,
+    height: '10%',
     justifyContent: 'center',
   },
   cinemaInfo: {
@@ -18,8 +18,9 @@ export default StyleSheet.create({
     width: '100%',
     marginBottom: 8,
     marginTop: 8,
+    // backgroundColor: 'tomato',
   },
   movies: {
-    flex: 0.7,
+    height: '50%',
   },
 });
