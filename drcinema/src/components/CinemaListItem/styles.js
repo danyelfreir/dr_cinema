@@ -2,10 +2,14 @@ import { StyleSheet } from 'react-native';
 import colors from '../../styles';
 
 export default StyleSheet.create({
-  items: {
+  container: {
+    flex: 1,
+    justifyContent: 'center',
     flexDirection: 'row',
-    height: 100,
     width: '100%',
+    height: '100%',
+    padding: 10,
+    backgroundColor: '#38afc2',
   },
   infoContainer: {
     flex: 1,
@@ -29,18 +33,8 @@ export default StyleSheet.create({
   url: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#ee6c4d',
-    left: 20,
-  },
-  urlContainer: {
-    width: 160,
-  },
-  background: {
-    flexDirection: 'row',
-    borderColor: colors.blackAlpha2,
-    borderWidth: 1,
-    overflow: 'hidden',
-    height: 100,
-    borderRadius: 10,
+    color: colors.orange,
+    padding: 10,
+    width: '65%',
   },
 });

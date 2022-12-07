@@ -20,15 +20,9 @@ const CinemaListItem = (info) => {
   };
 
   return (
-    <ImageBackground
-      source={backgroundImage}
-      resizeMode="cover"
-      style={styles.background}
-    >
+    <View style={styles.container}>
       <View style={styles.infoContainer}>
-        <View style={styles.title}>
-          <Text style={styles.title}>{cinema.name}</Text>
-        </View>
+        <Text style={styles.title}>{cinema.name}</Text>
         <View style={styles.urlContainer}>
           <Pressable
             onPress={() => {
@@ -42,7 +36,7 @@ const CinemaListItem = (info) => {
       <View style={styles.iconContainer}>
         <AntDesign name="right" size={32} style={styles.icon} />
       </View>
-    </ImageBackground>
+    </View>
   );
 };
 

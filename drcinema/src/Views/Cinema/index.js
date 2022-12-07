@@ -7,13 +7,7 @@ const Cinema = ({ route: { params } }) => {
   return (
     <View style={styles.container}>
       <View style={styles.nameImageContainer}>
-        <CinemaInfo
-          name={params.name}
-          address={params['address\t']}
-          phone={params.phone}
-          url={params.website}
-          description={params.description}
-        />
+        <CinemaInfo info={params} />
       </View>
     </View>
   );

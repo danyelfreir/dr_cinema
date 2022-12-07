@@ -4,7 +4,7 @@ import colors from '../../styles';
 export default StyleSheet.create({
   container: {
     width: '100%',
-    backgroundColor: '#A7D9F0',
+    backgroundColor: colors.darkBlue,
     paddingLeft: 10,
     paddingRight: 10,
   },

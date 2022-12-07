@@ -13,7 +13,7 @@ const headers = {
 
 const fetchCinemas = () => async (dispatch) => {
   dispatch(fetchCinemasRequest);
-  const response = await fetch(URL, { headers })
+  const response = await fetch(URL, { headers });
   const data = await response.json();
 
   fetch(URL, { headers })
