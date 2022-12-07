@@ -5,7 +5,9 @@ export default {
   blackAlpha: 'rgba(0, 0, 0, 0.75)',
   blackAlpha2: 'rgba(0, 0, 0, 0.5)',
   black: '#000',
-  blue: 'dodgerblue',
+  orange: '#ee6c4d',
+  darkBlue: '#293241',
+
   color1: 'rgb(255, 0, 146)',
   color2: 'rgb(255, 111, 177)',
   color3: 'rgb(255, 71, 64)',

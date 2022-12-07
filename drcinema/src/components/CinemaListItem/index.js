@@ -20,11 +20,9 @@ const CinemaListItem = (info) => {
   };
 
   return (
-    <View style={styles.items}>
+    <View style={styles.container}>
       <View style={styles.infoContainer}>
-        <View style={styles.title}>
-          <Text style={styles.title}>{cinema.name}</Text>
-        </View>
+        <Text style={styles.title}>{cinema.name}</Text>
         <View style={styles.urlContainer}>
           <Pressable
             onPress={() => {

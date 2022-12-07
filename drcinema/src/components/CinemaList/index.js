@@ -23,7 +23,7 @@ const CinemaList = ({ allCinemas, navigation: { navigate } }) => {
       <FlatList
         data={cinemas}
         renderItem={({ item }) => (
-          <View>
+          <View style={styles.listItem}>
             <Pressable onPress={() => navigate('Cinema', item)}>
               <CinemaListItem item={item} />
             </Pressable>
