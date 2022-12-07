@@ -3,12 +3,12 @@ import {
   fetchUpcomingMoviesSuccess,
   fetchUpcomingMoviesError,
 } from './action';
-import token from '../../../security/index';
+import { token } from '../../../security/index';
 
 const URL = 'https://api.kvikmyndir.is/upcoming';
 const headers = {
   'Content-Type': 'application/json',
-  'x-access-token': token.token,
+  'x-access-token': token,
 };
 
 const fetchUpcomingMovies = () => (dispatch) => {

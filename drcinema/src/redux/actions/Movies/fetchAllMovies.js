@@ -3,11 +3,11 @@ import {
   fetchAllMoviesSuccess,
   fetchAllMoviesError,
 } from './action.js';
-import token from '../../../security/index';
+import { token } from '../../../security/index';
 
 const headers = {
   'Content-Type': 'application/json',
-  'x-access-token': token.token,
+  'x-access-token': token,
 };
 
 const fetchAllMovies = () => (dispatch) => {
