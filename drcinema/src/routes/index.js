@@ -6,11 +6,12 @@ const Stack = createStackNavigator();
 import Styles from './styles';
 import Main from '../views/Main';
 import Cinema from '../views/Cinema';
+import CinemaList from '../components/CinemaList';
 
 const Router = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Kvikmyndahús">
         <Stack.Screen
           name="Home"
           component={Main}
@@ -23,16 +24,14 @@ const Router = () => {
             headerTitleAlign: 'center',
           }}
         />
-        {
-          <Stack.Screen
-            name="Kvikmyndahús"
-            component={CinemaList}
-            options={{
-              ...Styles.header,
-              title: 'CinemaList',
-            }}
-          />
-        }
+        <Stack.Screen
+          name="Kvikmyndahús"
+          component={CinemaList}
+          options={{
+            ...Styles.header,
+            title: 'CinemaList',
+          }}
+        />
         <Stack.Screen
           name="Cinema"
           component={Cinema}

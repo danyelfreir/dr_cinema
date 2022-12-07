@@ -11,11 +11,4 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: colors.white,
   },
-  errorContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-    width: 400,
-    padding: 10,
-  },
 });

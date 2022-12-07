@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { StyleSheet, View } from 'react-native';
 import Router from './src/routes';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, legacy_createStore as createStore } from 'redux';
 import reducers from './src/redux/reducers';
 import thunk from 'redux-thunk';
 
