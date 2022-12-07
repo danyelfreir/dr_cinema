@@ -5,7 +5,8 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: 'black',
+    backgroundColor: colors.white,
+    padding: 10,
   },
   logoContainer: {
     width: '100%',

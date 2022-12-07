@@ -1,16 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import styles from './styles';
 import CinemaInfo from '../../components/CinemaInfo';
-import CinemaLogo from '../../components/CinemaLogo';
 
 const Cinema = ({ route: { params } }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <CinemaLogo url={params.website} />
-      </View>
-      <View style={styles.cinemaInfo}>
+      <View style={styles.nameImageContainer}>
         <CinemaInfo
           name={params.name}
           address={params['address\t']}

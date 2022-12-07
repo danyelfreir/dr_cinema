@@ -1,10 +1,17 @@
 import React from 'react';
-import { View, Text, Linking, ImageBackground, onPress, Pressable } from 'react-native';
+import {
+  View,
+  Text,
+  Linking,
+  ImageBackground,
+  onPress,
+  Pressable,
+} from 'react-native';
 import styles from './styles';
 import { AntDesign } from '@expo/vector-icons';
 import backgroundImage from '../../resources/cinemaBackground.png';
 
-const Cinema = (info) => {
+const CinemaListItem = (info) => {
   const cinema = info.item;
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -13,7 +20,11 @@ const Cinema = (info) => {
   };
 
   return (
-    <ImageBackground source={backgroundImage} resizeMode="cover" style={styles.background}>
+    <ImageBackground
+      source={backgroundImage}
+      resizeMode="cover"
+      style={styles.background}
+    >
       <View style={styles.infoContainer}>
         <View style={styles.title}>
           <Text style={styles.title}>{cinema.name}</Text>
@@ -35,4 +46,4 @@ const Cinema = (info) => {
   );
 };
 
-export default Cinema;
+export default CinemaListItem;

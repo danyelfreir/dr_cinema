@@ -4,18 +4,11 @@ import colors from '../../styles';
 export default StyleSheet.create({
   container: {
     width: '100%',
-    backgroundColor: 'black',
+    backgroundColor: '#A7D9F0',
+    paddingLeft: 10,
+    paddingRight: 10,
   },
-  error: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: colors.white,
-  },
-  errorContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-    width: 400,
-    padding: 10,
+  listItem: {
+    paddingBottom: 10,
   },
 });
