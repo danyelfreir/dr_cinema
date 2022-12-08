@@ -3,23 +3,18 @@ import {
   fetchAllMoviesSuccess,
   fetchAllMoviesError,
 } from './action.js';
-import token from '../../../security/index';
+import MovieService from '../../../services/MovieService.js';
 
-const headers = {
-  'Content-Type': 'application/json',
-  'x-access-token': token.token,
-};
+const movieService = new MovieService();
 
-const fetchAllMovies = () => (dispatch) => {
+const fetchAllMovies = () => async (dispatch) => {
   dispatch(fetchAllMoviesRequest());
-  fetch('https://api.kvikmyndir.is/movies/', { headers })
-    .then((response) =>
-      response
-        .json()
-        .then((data) => dispatch(fetchAllMoviesSuccess(data)))
-        .catch((err) => dispatch(fetchAllMoviesError(err)))
-    )
-    .catch((err) => dispatch(fetchAllMoviesError(err)));
+  const { movies, error } = await movieService.getMovies();
+  if (error) {
+    console.log(error);
+    return dispatch(fetchAllMoviesError(error));
+  }
+  return dispatch(fetchAllMoviesSuccess(movies));
 };
 
 export default fetchAllMovies;

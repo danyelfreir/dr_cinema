@@ -7,11 +7,12 @@ import Styles from './styles';
 import Main from '../views/Main';
 import Cinema from '../views/Cinema';
 import CinemaList from '../components/CinemaList';
+import Movie from '../views/Movie';
 
 const Router = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Kvikmyndahús">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={Main}
@@ -35,7 +36,12 @@ const Router = () => {
         <Stack.Screen
           name="Cinema"
           component={Cinema}
-          options={{ ...Styles.header, title: 'Cinema' }}
+          options={{ ...Styles.navBar, title: 'Cinema' }}
+        />
+        <Stack.Screen
+          name="Movie"
+          component={Movie}
+          options={{ ...Styles.navBar }}
         />
       </Stack.Navigator>
     </NavigationContainer>

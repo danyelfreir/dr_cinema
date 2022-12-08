@@ -6,17 +6,27 @@ export default StyleSheet.create({
     flex: 1,
     width: '100%',
     backgroundColor: '#38afc2',
-    padding: 10,
   },
   logoContainer: {
     width: '100%',
-    height: 150,
+    height: '10%',
     justifyContent: 'center',
-    flex: 0.2,
   },
   cinemaInfo: {
     flex: 1,
     alignItems: 'center',
     width: '100%',
+    marginBottom: 8,
+    marginTop: 8,
+    // backgroundColor: 'tomato',
+  },
+  movies: {
+    position: 'absolute',
+    bottom: 0,
+    height: '50%',
+    width: '100%',
+  },
+  nameImageContainer: {
+    padding: 10,
   },
 });

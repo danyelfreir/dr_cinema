@@ -11,6 +11,8 @@ export default StyleSheet.create({
     shadowOffset: { width: 10, height: 200 },
     shadowColor: 'black',
     shadowOpacity: 1.0,
+    elevation: 3,
+    shadowColor: 'black',
   },
   text: {
     color: 'white',

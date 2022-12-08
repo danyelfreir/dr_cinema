@@ -7,6 +7,7 @@ import fetchCinemas from '../../redux/actions/Cinemas/fetchCinemas';
 import styles from './styles.js';
 import UpcomingMoviesCarousel from '../../components/UpcomingMoviesCarousel';
 import HomeButton from '../../components/HomeButton';
+import CinemaList from '../../components/CinemaList';
 
 const CINEMAS = true;
 const UPCOMING = false;
@@ -32,20 +33,21 @@ const Main = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.content}>
         {visibleContent ? (
-          <Text>CinemaList Here</Text>
+          <CinemaList data={allCinemas} navigation={navigation} />
         ) : (
           <UpcomingMoviesCarousel data={upcomingMovies} />
         )}
       </View>
-      {/* <CinemaList /> */}
       <View style={styles.buttonContainer}>
         <HomeButton
           title="Kvikmyndahús"
           onPress={() => setvisibleContent(CINEMAS)}
+          active={visibleContent}
         />
         <HomeButton
           title="Væntanlegt í bíó"
           onPress={() => setvisibleContent(UPCOMING)}
+          active={!visibleContent}
         />
       </View>
     </View>

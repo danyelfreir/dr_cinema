@@ -7,24 +7,14 @@ import fetchUpcomingMovies from '../../redux/actions/UpcomingMovies/fetchUpcomin
 import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
 import fetchCinemas from '../../redux/actions/Cinemas/fetchCinemas';
 
-const CinemaList = ({ allCinemas, navigation: { navigate } }) => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchUpcomingMovies());
-    dispatch(fetchAllMovies());
-    dispatch(fetchCinemas());
-  }, []);
-
-  const cinemas = useSelector((state) => state.cinemas.allCinemas);
-
+const CinemaList = ({ data, navigation }) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={cinemas}
+        data={data}
         renderItem={({ item }) => (
           <View style={styles.listItem}>
-            <Pressable onPress={() => navigate('Cinema', item)}>
+            <Pressable onPress={() => navigation.navigate('Cinema', item)}>
               <CinemaListItem item={item} />
             </Pressable>
           </View>
