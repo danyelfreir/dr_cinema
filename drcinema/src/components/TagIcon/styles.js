@@ -9,14 +9,14 @@ export default StyleSheet.create({
     padding: 1,
     margin: 2,
     backgroundColor: 'dodgerblue',
-    borderWidth: 1,
-    borderColor: 'black',
     // backgroundColor: 'teal',
   },
   tag: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 10,
+    paddingLeft: 2,
+    paddingRight: 2,
     // letterSpacing: -2,
   },
 });
