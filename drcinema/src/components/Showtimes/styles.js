@@ -3,12 +3,16 @@ import colors from '../../styles/index';
 
 export default StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: '#000',
     backgroundColor: '#FFF',
     borderRadius: 20,
     width: '80%',
     alignItems: 'center',
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.75,
+    shadowColor: '#000',
   },
   timeslotTitle: {
     fontSize: 20,

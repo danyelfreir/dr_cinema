@@ -35,6 +35,8 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: colors.orange,
     padding: 10,
+  },
+  urlContainer: {
     width: '65%',
   },
 });

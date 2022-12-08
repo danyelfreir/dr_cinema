@@ -4,20 +4,8 @@ import colors from '../../styles/index';
 const { height: winHeight, width: winWidth } = Dimensions.get('window');
 
 export default StyleSheet.create({
-  header: {
-    height: 100,
-    backgroundColor: colors.red,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  headerTitle: {
-    paddingBottom: 10,
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#FFF',
-  },
   container: {
-    backgroundColor: '#141414',
+    backgroundColor: colors.darkBlue,
   },
 
   title: {

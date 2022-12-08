@@ -17,10 +17,8 @@ const Router = () => {
           name="Home"
           component={Main}
           options={{
+            ...Styles.navBar,
             title: 'Dr.Cinema',
-            headerStyle: {
-              backgroundColor: 'dodgerblue',
-            },
             headerTitleStyle: { color: 'white' },
             headerTitleAlign: 'center',
           }}
