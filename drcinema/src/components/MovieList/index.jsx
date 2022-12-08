@@ -7,6 +7,7 @@ const MovieList = ({ data, cinema, navigation }) => {
   const renderItem = ({ item }) => {
     return (
       <Pressable
+        style={styles.item}
         onPress={() =>
           navigation.navigate('Movie', { movie: item, cinema: cinema })
         }
