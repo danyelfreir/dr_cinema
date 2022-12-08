@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { View, FlatList, Pressable } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import CinemaListService from '../../services/CinemaListService';
 import CinemaListItem from '../CinemaListItem';
 import styles from './styles';
-import fetchUpcomingMovies from '../../redux/actions/UpcomingMovies/fetchUpcomingMovies';
-import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
-import fetchCinemas from '../../redux/actions/Cinemas/fetchCinemas';
 
 const CinemaList = ({ data, navigation }) => {
+  const service = new CinemaListService(data);
+  const sortedData = service.sortedCinemas;
+
   return (
     <View style={styles.container}>
       <FlatList
