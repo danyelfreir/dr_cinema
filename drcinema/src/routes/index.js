@@ -29,8 +29,8 @@ const Router = () => {
           name="Kvikmyndahús"
           component={CinemaList}
           options={{
-            ...Styles.navBar,
-            title: 'CinemaList',
+            ...Styles.header,
+            title: 'Kvikmyndahús',
           }}
         />
         <Stack.Screen

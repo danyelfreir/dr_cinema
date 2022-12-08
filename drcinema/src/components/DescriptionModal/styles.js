@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../styles';
 
 export default StyleSheet.create({
-  descrContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
+  container: {
     position: 'absolute',
-    width: 330,
+    width: '100%',
+    height: '65%',
     borderColor: 'white',
     borderWidth: 1,
     padding: 10,
+    backgroundColor: 'colors.darkBlue',
   },
   description: {
     fontSize: 16,
