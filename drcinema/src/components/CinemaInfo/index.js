@@ -18,10 +18,6 @@ const CinemaInfo = (cinemaInfo) => {
     return filteredDescription;
   };
 
-<<<<<<< HEAD
-const CinemaInfo = (info) => {
-=======
->>>>>>> 416d84c91c7e2591fee7933b9393cabea0c02b87
   return (
     <View style={styles.infoContainer}>
       <View style={styles.titleContainer}>

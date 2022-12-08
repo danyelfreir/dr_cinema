@@ -7,14 +7,14 @@ import fetchUpcomingMovies from '../../redux/actions/UpcomingMovies/fetchUpcomin
 import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
 import fetchCinemas from '../../redux/actions/Cinemas/fetchCinemas';
 
-const CinemaList = ({ data, navigation: { navigate } }) => {
+const CinemaList = ({ data, navigation }) => {
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
         renderItem={({ item }) => (
           <View style={styles.listItem}>
-            <Pressable onPress={() => navigate('Cinema', item)}>
+            <Pressable onPress={() => navigation.navigate('Cinema', item)}>
               <CinemaListItem item={item} />
             </Pressable>
           </View>
