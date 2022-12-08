@@ -35,6 +35,39 @@ export default class CinemaListService {
       Þ: 'BF',
       Æ: 'BG',
       Ö: 'BH',
+      a: 'aa',
+      á: 'ab',
+      b: 'ac',
+      d: 'ad',
+      ð: 'ae',
+      e: 'af',
+      é: 'ag',
+      f: 'ah',
+      g: 'ai',
+      h: 'aj',
+      i: 'ak',
+      í: 'al',
+      j: 'am',
+      k: 'an',
+      l: 'ao',
+      m: 'ap',
+      n: 'aq',
+      o: 'ar',
+      ó: 'as',
+      p: 'at',
+      r: 'au',
+      s: 'av',
+      t: 'ax',
+      u: 'ay',
+      ú: 'az',
+      v: 'ba',
+      x: 'bb',
+      y: 'bc',
+      z: 'bd',
+      ý: 'be',
+      þ: 'bf',
+      æ: 'bg',
+      ö: 'bh',
     };
   }
 
@@ -44,48 +77,54 @@ export default class CinemaListService {
 
   sortCinemas = () => {
     // Sorts the cinema list alphabetically by name
+
     const sorted = this.cinemaList.sort((a, b) => {
       const aName = a.name;
       const bName = b.name;
-      const aNameFirstLetter = aName[0];
-      const aNameSecondLetter = aName[1];
-      const bNameFirstLetter = bName[0];
-      const bNameSecondLetter = bName[1];
-      const aNameFirstLetterAscii = this.is_ascii[aNameFirstLetter];
-      const bNameFirstLetterAscii = this.is_ascii[bNameFirstLetter];
+
       if (
-        // If both names have more than one word
-        a.name.split(' ').length > 1 &&
-        b.name.split(' ').length > 1 &&
-        aNameFirstLetter === bNameFirstLetter
+        aName.split(' ').length > 1 &&
+        bName.split(' ').length > 1 &&
+        aName[0] === bName[0]
       ) {
-        if (
-          this.is_ascii[a.name.split(' ')[1][0]] <
-          this.is_ascii[b.name.split(' ')[1][0]]
-        ) {
-          return -1;
-        }
-        if (
-          this.is_ascii[a.name.split(' ')[1][0]] >
-          this.is_ascii[b.name.split(' ')[1][0]]
-        ) {
-          return 1;
-        } else {
-          return 0;
-        }
+        return this.twoNounsHelperSort(aName, bName);
+      } else {
+        return this.singleNounHelperSort(aName, bName);
       }
-      if (
-        // If both names have only one word
-        aNameFirstLetterAscii + aNameSecondLetter <
-        bNameFirstLetterAscii + bNameSecondLetter
-      ) {
-        return -1;
-      }
-      if (aNameFirstLetterAscii > bNameFirstLetterAscii) {
-        return 1;
-      }
-      return 0;
     });
     return sorted;
+  };
+
+  singleNounHelperSort = (aName, bName) => {
+    const aFirstLetter = this.is_ascii[aName[0]];
+    const aSecondLetter = this.is_ascii[aName[1]];
+    const bFirstLetter = this.is_ascii[bName[0]];
+    const bSecondLetter = this.is_ascii[bName[1]];
+
+    if (aFirstLetter + aSecondLetter < bFirstLetter + bSecondLetter) {
+      return -1;
+    }
+    if (aFirstLetter + aSecondLetter > bFirstLetter + bSecondLetter) {
+      return 1;
+    }
+    return 0;
+  };
+
+  twoNounsHelperSort = (aName, bName) => {
+    // sort sub name alphabetically
+    if (
+      this.is_ascii[aName.split(' ')[1][0]] <
+      this.is_ascii[bName.split(' ')[1][0]]
+    ) {
+      return -1;
+    }
+    if (
+      this.is_ascii[aName.split(' ')[1][0]] >
+      this.is_ascii[bName.split(' ')[1][0]]
+    ) {
+      return 1;
+    } else {
+      return 0;
+    }
   };
 }
