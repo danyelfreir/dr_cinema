@@ -9,7 +9,7 @@ export default StyleSheet.create({
     width: '100%',
     height: '100%',
     padding: 10,
-    backgroundColor: '#38afc2',
+    backgroundColor: colors.yaleBlue,
   },
   infoContainer: {
     flex: 1,
@@ -22,19 +22,21 @@ export default StyleSheet.create({
     width: 50,
   },
   icon: {
-    color: 'white',
+    color: colors.magnolia,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: colors.white,
+    color: colors.magnolia,
     left: 10,
+  },
+  urlContainer: {
+    width: '45%',
   },
   url: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: colors.orange,
+    color: colors.pumpkin,
     padding: 10,
-    width: '65%',
   },
 });

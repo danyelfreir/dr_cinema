@@ -4,9 +4,10 @@ import colors from '../styles/index';
 export default StyleSheet.create({
   navBar: {
     headerStyle: {
-      backgroundColor: colors.blue,
+      backgroundColor: 'dodgerblue',
     },
     headerTintColor: colors.white,
+    headerTitleAlign: 'center',
   },
   searchIcon: {
     color: '#fff',

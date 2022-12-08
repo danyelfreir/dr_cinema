@@ -18,17 +18,13 @@ const Router = () => {
           component={Main}
           options={{
             title: 'Dr.Cinema',
-            headerStyle: {
-              backgroundColor: 'dodgerblue',
-            },
-            headerTitleStyle: { color: 'white' },
-            headerTitleAlign: 'center',
+            ...Styles.navBar,
           }}
         />
         <Stack.Screen
           name="Cinema"
           component={Cinema}
-          options={{ ...Styles.navBar, title: 'Cinema' }}
+          options={{ ...Styles.navBar, title: '' }}
         />
         <Stack.Screen
           name="Movie"

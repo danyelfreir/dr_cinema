@@ -6,10 +6,8 @@ export default StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '65%',
-    borderColor: 'white',
-    borderWidth: 1,
     padding: 10,
-    backgroundColor: 'colors.darkBlue',
+    backgroundColor: colors.yaleBlue,
   },
   description: {
     fontSize: 16,

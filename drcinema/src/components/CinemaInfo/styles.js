@@ -2,16 +2,11 @@ import { StyleSheet } from 'react-native';
 import colors from '../../styles';
 
 export default StyleSheet.create({
-  background: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-    position: 'absolute',
-    width: '100%',
-  },
   infoContainer: {
     padding: 10,
-    backgroundColor: '#38afc2',
+    position: 'absolute',
+    width: '100%',
+    backgroundColor: colors.yaleBlue,
   },
   titleContainer: {
     alignItems: 'center',
@@ -48,7 +43,7 @@ export default StyleSheet.create({
   url: {
     paddingVertical: 5,
     fontSize: 22,
-    color: colors.orange,
+    color: colors.pumpkin,
   },
   descrContainer: {
     flexDirection: 'row',

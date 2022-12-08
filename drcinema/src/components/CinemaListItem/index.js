@@ -19,6 +19,13 @@ const CinemaListItem = (info) => {
     setIsOpen(true);
   };
 
+  const regex = /^www./g;
+
+  const filterUrl = (url) => {
+    // filter out www.
+    return url.replace(regex, '');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
@@ -29,7 +36,7 @@ const CinemaListItem = (info) => {
               Linking.openURL(`https://${cinema.website}`);
             }}
           >
-            <Text style={styles.url}>{cinema.website}</Text>
+            <Text style={styles.url}>{filterUrl(cinema.website)}</Text>
           </Pressable>
         </View>
       </View>

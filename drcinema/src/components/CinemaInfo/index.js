@@ -9,13 +9,20 @@ const CinemaInfo = (cinemaInfo) => {
   const info = cinemaInfo.info;
   const [viewDescription, setViewDescription] = React.useState(false);
 
-  const regex = /\B<br>|\B<b>|^<br>/g;
+  const descrRegex = /\B<br>|\B<b>|^<br>/g;
 
   const filterDescription = (description) => {
     // filter out <br> and <b> tags
     if (!description) return '';
-    const filteredDescription = description.replace(regex, ' ');
+    const filteredDescription = description.replace(descrRegex, ' ');
     return filteredDescription;
+  };
+
+  const urlRegex = /^www./g;
+
+  const filterUrl = (url) => {
+    // filter out www.
+    return url.replace(urlRegex, '');
   };
 
   return (
@@ -35,41 +42,43 @@ const CinemaInfo = (cinemaInfo) => {
             {info['address\t'] + ', ' + info.city}
           </Text>
         </View>
-        <Pressable onPress={() => Linking.openURL(`tel:${info.phone}`)}>
-          <View style={styles.phoneContainer}>
-            <Ionicons
-              name="call-outline"
-              size={24}
-              color="white"
-              style={styles.phoneIcon}
-            />
-            <Text style={styles.phone}>
-              {info.phone ? info.phone : 'enginn sími'}
-            </Text>
-          </View>
-        </Pressable>
-        <Pressable onPress={() => setViewDescription(true)}>
-          <View style={styles.descrContainer}>
-            <AntDesign
-              name="infocirlceo"
-              size={24}
-              color="white"
-              style={styles.infoIcon}
-            />
-            <Text style={styles.description}>
-              {info.description ? 'Nánari upplýsingar' : ''}
-            </Text>
-          </View>
-        </Pressable>
-        <View style={styles.urlContainer}>
-          <Pressable
-            onPress={() => {
-              Linking.openURL(`https://${info.website}`);
-            }}
-          >
-            <Text style={styles.url}>{info.website}</Text>
+        {!!info.phone && (
+          <Pressable onPress={() => Linking.openURL(`tel:${info.phone}`)}>
+            <View style={styles.phoneContainer}>
+              <Ionicons
+                name="call-outline"
+                size={24}
+                color="white"
+                style={styles.phoneIcon}
+              />
+              <Text style={styles.phone}>{info.phone}</Text>
+            </View>
           </Pressable>
-        </View>
+        )}
+        {!!info.description && (
+          <Pressable onPress={() => setViewDescription(true)}>
+            <View style={styles.descrContainer}>
+              <AntDesign
+                name="infocirlceo"
+                size={24}
+                color="white"
+                style={styles.infoIcon}
+              />
+              <Text style={styles.description}>Nánari upplýsingar</Text>
+            </View>
+          </Pressable>
+        )}
+        {!!info.website && (
+          <View style={styles.urlContainer}>
+            <Pressable
+              onPress={() => {
+                Linking.openURL(`https://${info.website}`);
+              }}
+            >
+              <Text style={styles.url}>{filterUrl(info.website)}</Text>
+            </Pressable>
+          </View>
+        )}
       </View>
       <DescriptionModal
         isVisible={viewDescription}

@@ -18,7 +18,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     width: '105%',
     flexDirection: 'row',
-    // backgroundColor: 'white',
     alignSelf: 'center',
     margin: 0,
     elevation: 5,
