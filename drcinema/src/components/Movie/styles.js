@@ -12,10 +12,13 @@ export default StyleSheet.create({
     right: 0,
     top: 0,
   },
+  image: {
+    flex: 2,
+  },
   thumbnail: {
-    height: '70%',
+    height: '100%',
     width: '100%',
-    // transform: [{ scaleY: 0.8 }],
+    // transform: [{ scaleX: 1.3 }],
   },
   description: {
     flex: 1,

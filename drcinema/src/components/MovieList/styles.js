@@ -13,6 +13,6 @@ export default StyleSheet.create({
   },
   item: {
     margin: 8,
-    width: 160,
+    width: 180,
   },
 });

@@ -43,11 +43,13 @@ const Main = ({ navigation }) => {
           title="Kvikmyndahús"
           onPress={() => setvisibleContent(CINEMAS)}
           active={visibleContent}
+          icon="warehouse"
         />
         <HomeButton
           title="Væntanlegt í bíó"
           onPress={() => setvisibleContent(UPCOMING)}
           active={!visibleContent}
+          icon="camera-burst"
         />
       </View>
     </View>

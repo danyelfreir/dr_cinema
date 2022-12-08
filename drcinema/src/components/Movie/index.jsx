@@ -16,7 +16,9 @@ const Movie = ({ item }) => {
           />
         )}
       </View>
-      <Image source={{ uri: item.poster }} style={styles.thumbnail} />
+      <View style={styles.image}>
+        <Image source={{ uri: item.poster }} style={styles.thumbnail} />
+      </View>
       <LinearGradient
         colors={['transparent', 'black']}
         end={{ x: 0.5, y: 0.9 }}
