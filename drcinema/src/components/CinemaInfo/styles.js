@@ -56,7 +56,7 @@ export default StyleSheet.create({
   },
   description: {
     fontSize: 22,
-    color: colors.white,
+    color: colors.blue,
   },
   infoIcon: { paddingRight: 10 },
 });

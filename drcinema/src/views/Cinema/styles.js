@@ -22,9 +22,10 @@ export default StyleSheet.create({
   },
   movies: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 50,
     height: '50%',
     width: '100%',
+    // marginBottom: 30,
   },
   nameImageContainer: {
     padding: 10,
