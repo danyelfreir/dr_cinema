@@ -10,10 +10,11 @@ const Showtimes = ({ showtimes, cinema }) => {
         <View>
           <Text style={styles.timeslotTitle}>Sýningar í {cinema.name}</Text>
           <Seperator width={200} />
-          {showtimes.schedule.map((timeslot) => {
+          {showtimes.schedule.map((timeslot, index) => {
             const timeslots = timeslot.time.split(' ');
             return (
               <Pressable
+                key={index}
                 style={styles.timeslotContainer}
                 onPress={() => Linking.openURL(timeslot.purchase_url)}
               >
