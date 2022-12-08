@@ -6,7 +6,6 @@ export default StyleSheet.create({
     flex: 1,
     width: '100%',
     backgroundColor: '#38afc2',
-    padding: 10,
   },
   logoContainer: {
     width: '100%',
@@ -22,6 +21,12 @@ export default StyleSheet.create({
     // backgroundColor: 'tomato',
   },
   movies: {
+    position: 'absolute',
+    bottom: 0,
     height: '50%',
+    width: '100%',
+  },
+  nameImageContainer: {
+    padding: 10,
   },
 });
