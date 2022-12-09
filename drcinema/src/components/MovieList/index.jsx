@@ -4,7 +4,7 @@ import Movie from '../Movie';
 import styles from './styles';
 import ZeroComponent from '../ZeroComponent';
 
-const MovieList = ({ data, cinema, navigation, reasonForEmpty }) => {
+const MovieList = ({ data, cinema, navigation, listEmptyComponent }) => {
   const renderItem = ({ item }) => {
     return (
       <Pressable
@@ -19,18 +19,19 @@ const MovieList = ({ data, cinema, navigation, reasonForEmpty }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Sýningar</Text>
-      <FlatList
-        data={data}
-        horizontal={true}
-        renderItem={renderItem}
-        ListEmptyComponent={() => <ZeroComponent message={reasonForEmpty} />}
-        contentContainerStyle={{
-          flex: 1,
-        }}
-      />
-    </View>
+    // <View style={styles.container}>
+    // <Text style={styles.header}>Sýningar</Text>
+    <FlatList
+      data={data}
+      horizontal={true}
+      renderItem={renderItem}
+      ListEmptyComponent={listEmptyComponent}
+      contentContainerStyle={{
+        flexGrow: 1,
+        justifyContent: 'center',
+      }}
+    />
+    // </View>
   );
 };
 

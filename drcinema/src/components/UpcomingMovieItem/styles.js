@@ -3,10 +3,9 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     backgroundColor: 'black',
-    // justifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
     height: 430,
-    shadowColor: 'red',
   },
   trailer: {
     flexDirection: 'row',

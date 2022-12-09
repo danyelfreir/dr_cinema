@@ -5,7 +5,7 @@ import Carousel from 'react-native-snap-carousel';
 import UpcomingMovieItem from '../UpcomingMovieItem';
 import ZeroComponent from '../ZeroComponent';
 
-const UpcomingMoviesCarousel = ({ data }) => {
+const UpcomingMoviesCarousel = ({ data, error }) => {
   const { width: width } = Dimensions.get('screen');
 
   const renderItem = ({ item, index }) => {
@@ -23,9 +23,12 @@ const UpcomingMoviesCarousel = ({ data }) => {
       <Carousel
         itemWidth={250}
         sliderWidth={width}
-        data={[]}
+        data={data}
         renderItem={renderItem}
-        ListEmptyComponent={ZeroComponent}
+        ListEmptyComponent={() => (
+          <ZeroComponent error={error} message={'Engar myndir á næstunni'} />
+        )}
+        // contentContainerCustomStyle={{ flexGrow: 1, justifyContent: 'center' }}
       />
     </View>
   );

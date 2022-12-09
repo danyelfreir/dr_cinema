@@ -6,7 +6,7 @@ export default StyleSheet.create({
     width: '100%',
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: colors.darkJungleGreen,
+    // backgroundColor: colors.darkJungleGreen,
   },
   listItem: {
     marginBottom: 10,
