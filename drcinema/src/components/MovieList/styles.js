@@ -10,7 +10,7 @@ export default StyleSheet.create({
   header: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
+    color: colors.cinemaListItemTitle,
     paddingLeft: 10,
   },
   item: {

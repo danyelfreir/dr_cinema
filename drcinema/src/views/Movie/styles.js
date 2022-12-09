@@ -4,12 +4,8 @@ import colors from '../../styles/index';
 const { height: winHeight, width: winWidth } = Dimensions.get('window');
 
 export default StyleSheet.create({
-  container: {
-    // backgroundColor: colors.yaleBlue,
-  },
   background: {
-    // backgroundColor: colors.yaleBlue,
-    backgroundColor: '#fff',
+    backgroundColor: colors.background,
   },
   title: {
     fontSize: 28,
@@ -19,7 +15,6 @@ export default StyleSheet.create({
   description: {
     marginTop: 20,
     marginBottom: 20,
-    // color: '#FFF',
     color: colors.black,
   },
   body: {

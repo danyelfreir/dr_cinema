@@ -5,6 +5,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
+    backgroundColor: colors.background,
   },
   infoContainer: {
     flex: 0.35,
@@ -14,5 +15,6 @@ export default StyleSheet.create({
     flex: 0.65,
     width: '100%',
     marginBottom: 10,
+    paddingBottom: 10,
   },
 });
