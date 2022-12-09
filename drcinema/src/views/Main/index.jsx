@@ -68,6 +68,7 @@ const Main = ({ navigation }) => {
           <UpcomingMoviesCarousel
             onPressFunction={navigation.navigate}
             data={orderedUpcomingMovies}
+            error={upcomingError}
           />
         )}
       </View>

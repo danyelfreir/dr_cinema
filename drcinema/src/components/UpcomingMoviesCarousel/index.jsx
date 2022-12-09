@@ -16,20 +16,20 @@ const UpcomingMoviesCarousel = ({ onPressFunction, data, error }) => {
   return (
     <View
       style={{
+        // flex: 1,
         alignSelf: 'center',
         justifyContent: 'center',
         width: '100%',
       }}
     >
       <Carousel
-        itemWidth={250}
+        itemWidth={275}
         sliderWidth={width}
         data={data}
         renderItem={renderItem}
         ListEmptyComponent={() => (
           <ZeroComponent error={error} message={'Engar myndir á næstunni'} />
         )}
-        // contentContainerCustomStyle={{ flexGrow: 1, justifyContent: 'center' }}
       />
     </View>
   );
