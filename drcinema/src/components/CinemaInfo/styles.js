@@ -65,7 +65,7 @@ export default StyleSheet.create({
     color: colors.white,
   },
   urlIconContainer: {
-    paddingRight: 5,
+    paddingRight: 10,
   },
   descrContainer: {
     flexDirection: 'row',
