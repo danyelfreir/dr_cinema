@@ -8,7 +8,8 @@ export default StyleSheet.create({
     // backgroundColor: colors.yaleBlue,
   },
   background: {
-    backgroundColor: colors.yaleBlue,
+    // backgroundColor: colors.yaleBlue,
+    backgroundColor: '#fff',
   },
   title: {
     fontSize: 28,
@@ -18,7 +19,8 @@ export default StyleSheet.create({
   description: {
     marginTop: 20,
     marginBottom: 20,
-    color: '#FFF',
+    // color: '#FFF',
+    color: colors.black,
   },
   body: {
     margin: 20,

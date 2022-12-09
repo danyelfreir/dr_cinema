@@ -59,9 +59,16 @@ const Main = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.content}>
         {visibleContent ? (
-          <CinemaList data={[]} navigation={navigation} error={cinemaError} />
+          <CinemaList
+            data={orderedCinemas}
+            navigation={navigation}
+            error={cinemaError}
+          />
         ) : (
-          <UpcomingMoviesCarousel data={[]} error={upcomingError} />
+          <UpcomingMoviesCarousel
+            onPressFunction={navigation.navigate}
+            data={orderedUpcomingMovies}
+          />
         )}
       </View>
       <View style={styles.buttonContainer}>

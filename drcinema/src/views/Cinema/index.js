@@ -9,7 +9,9 @@ import ZeroComponent from '../../components/ZeroComponent';
 const Cinema = ({ navigation, route: { params } }) => {
   const findMyMovies = (allMovies) => {
     return allMovies.filter((movie) =>
-      movie.showtimes.some((show) => show.cinema.id === params.id)
+      movie.showtimes.some(
+        (show) => show.cinema.id === params.id || show.cinema == params.id
+      )
     );
   };
 
