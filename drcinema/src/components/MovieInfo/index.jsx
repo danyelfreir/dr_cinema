@@ -8,23 +8,36 @@ const MovieInfo = ({ movie }) => {
     <View style={styles.informationContainer}>
       <Image style={styles.poster} source={{ uri: movie.poster }} />
       <View style={styles.informationTextContainer}>
-        <MovieInfoChild
-          infoKey={'Lengd:'}
-          infoValue={`${movie.durationMinutes} mín`}
-        />
-        <MovieInfoChild
-          infoKey={'Aldurstakmark:'}
-          infoValue={movie.certificateIS}
-        />
-        <MovieInfoChild
-          infoKey={'Leikstjóri:'}
-          infoValueArray={movie.directors_abridged}
-        />
-        <MovieInfoChild
-          infoKey={'Leikarar:'}
-          infoValueArray={movie.actors_abridged}
-        />
-        <MovieInfoChild infoKey={'Flokkar:'} infoValueArray={movie.genres} />
+        {movie.year && (
+          <MovieInfoChild infoKey={'Útgáfuár'} infoValue={movie.year} />
+        )}
+        {movie.durationMinutes && (
+          <MovieInfoChild
+            infoKey={'Lengd:'}
+            infoValue={`${movie.durationMinutes} mín`}
+          />
+        )}
+        {movie.certificateIS && (
+          <MovieInfoChild
+            infoKey={'Aldurstakmark:'}
+            infoValue={movie.certificateIS}
+          />
+        )}
+        {movie.directors_abridged && movie.directors_abridged.length > 0 && (
+          <MovieInfoChild
+            infoKey={'Leikstjóri:'}
+            infoValueArray={movie.directors_abridged}
+          />
+        )}
+        {movie.actors_abridged && movie.actors_abridged.length > 0 && (
+          <MovieInfoChild
+            infoKey={'Leikarar:'}
+            infoValueArray={movie.actors_abridged}
+          />
+        )}
+        {movie.genres && movie.genres.length > 0 && (
+          <MovieInfoChild infoKey={'Flokkar:'} infoValueArray={movie.genres} />
+        )}
       </View>
     </View>
   );

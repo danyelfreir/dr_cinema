@@ -4,7 +4,7 @@ import colors from '../styles/index';
 export default StyleSheet.create({
   navBar: {
     headerStyle: {
-      backgroundColor: 'dodgerblue',
+      backgroundColor: colors.yaleBlue,
     },
     headerTintColor: colors.white,
     headerTitleAlign: 'center',

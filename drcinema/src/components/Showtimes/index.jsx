@@ -3,9 +3,9 @@ import { Pressable, View, Text, Linking } from 'react-native';
 import Seperator from '../Seperator/index.jsx';
 import styles from './styles.js';
 
-// const Showtimes = ({ showtimes, cinema }) => {
 const Showtimes = ({ showtimes, cinema }) => {
   const [hasShowtimes, setHasShowtimes] = useState(false);
+
   useEffect(() => {
     if (showtimes && showtimes.schedule.length > 0) {
       setHasShowtimes(true);

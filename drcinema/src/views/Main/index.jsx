@@ -54,7 +54,10 @@ const Main = ({ navigation }) => {
         {visibleContent ? (
           <CinemaList data={orderedCinemas} navigation={navigation} />
         ) : (
-          <UpcomingMoviesCarousel data={orderedUpcomingMovies} />
+          <UpcomingMoviesCarousel
+            onPressFunction={navigation.navigate}
+            data={orderedUpcomingMovies}
+          />
         )}
       </View>
       <View style={styles.buttonContainer}>

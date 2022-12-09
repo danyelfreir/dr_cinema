@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 export default StyleSheet.create({
   container: {
@@ -12,11 +12,10 @@ export default StyleSheet.create({
     marginBottom: 70,
   },
   buttonContainer: {
-    height: 70,
+    height: Platform.OS === 'ios' ? 100 : 70,
     borderColor: 'grey',
     borderWidth: 2,
-    // paddingBottom: 24,
-    // paddingTop: 24,
+    paddingBottom: Platform.OS === 'ios' && 24,
     position: 'absolute',
     bottom: 0,
     backgroundColor: 'white',

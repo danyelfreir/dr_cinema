@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../styles/index';
 
 export default StyleSheet.create({
   poster: {
@@ -21,13 +22,14 @@ export default StyleSheet.create({
   },
   informationTextKey: {
     width: '47%',
-    color: '#C4C4C4',
+    color: colors.gray,
     fontWeight: 'bold',
     // marginLeft: 20,
   },
   informationTextValue: {
     width: '53%',
-    color: '#C4C4C4',
+    // color: '#C4C4C4',
+    color: 'blue',
     marginLeft: 5,
     alignSelf: 'flex-end',
   },

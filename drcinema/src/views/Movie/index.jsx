@@ -39,17 +39,21 @@ const Movie = ({ navigation, route: { params } }) => {
             <MovieInfo movie={movie} />
             <Seperator width="100%" label="Lýsing" />
             <Text style={styles.description}>{movie.plot}</Text>
-            <Seperator width="100%" label="Miðar" />
-            <View style={styles.showtimesContainer}>
-              <Showtimes
-                showtimes={
-                  movie.showtimes.filter(
-                    (showtime) => showtime.cinema.id === cinema.id
-                  )[0]
-                }
-                cinema={cinema}
-              />
-            </View>
+            {movie.showtimes && (
+              <>
+                <Seperator width="100%" label="Miðar" />
+                <View style={styles.showtimesContainer}>
+                  <Showtimes
+                    showtimes={
+                      movie.showtimes.filter(
+                        (showtime) => showtime.cinema.id === cinema.id
+                      )[0]
+                    }
+                    cinema={cinema}
+                  />
+                </View>
+              </>
+            )}
             {showTrailers && <Seperator width="100%" label="Stiklur" />}
           </View>
           {showTrailers && (
