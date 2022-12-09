@@ -13,6 +13,7 @@ const Cinema = ({ navigation, route: { params } }) => {
   };
 
   const movies = findMyMovies(useSelector((state) => state.movies));
+  // console.log(erro1);
 
   useEffect(() => {
     navigation.setOptions({ title: params.name });
@@ -24,11 +25,16 @@ const Cinema = ({ navigation, route: { params } }) => {
         <CinemaInfo info={params} />
       </View>
 
-      {!!movies.length > 0 && (
-        <View style={styles.movies}>
-          <MovieList data={movies} cinema={params} navigation={navigation} />
-        </View>
-      )}
+      {/* {!!movies.length > 0 && ( */}
+      <View style={styles.movies}>
+        <MovieList
+          data={movies}
+          cinema={params}
+          navigation={navigation}
+          reasonForEmpty={'Hello'}
+        />
+      </View>
+      {/* )} */}
       {movies.length === 0 && (
         <View style={styles.missingMovies}>
           <Text style={styles.message}>Engar myndir í sýningu!</Text>

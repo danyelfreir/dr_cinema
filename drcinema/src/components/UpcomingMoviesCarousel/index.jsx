@@ -3,6 +3,7 @@ import { View, Text, Image, Dimensions } from 'react-native';
 import styles from './styles';
 import Carousel from 'react-native-snap-carousel';
 import UpcomingMovieItem from '../UpcomingMovieItem';
+import ZeroComponent from '../ZeroComponent';
 
 const UpcomingMoviesCarousel = ({ data }) => {
   const { width: width } = Dimensions.get('screen');
@@ -22,8 +23,9 @@ const UpcomingMoviesCarousel = ({ data }) => {
       <Carousel
         itemWidth={250}
         sliderWidth={width}
-        data={data}
+        data={[]}
         renderItem={renderItem}
+        ListEmptyComponent={ZeroComponent}
       />
     </View>
   );
