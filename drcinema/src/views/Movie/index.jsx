@@ -13,6 +13,7 @@ const Movie = ({ navigation, route: { params } }) => {
   const cinema = params.cinema;
   const movieService = new MovieService();
   const [movieBackdrops, setMovieBackdrops] = useState([]);
+  const [showTrailers, setShowTrailers] = useState(false);
 
   useEffect(() => {
     navigation.setOptions({ title: movie.title });
@@ -20,36 +21,43 @@ const Movie = ({ navigation, route: { params } }) => {
       const { backdrops } = await movieService.getImages(movie.ids.imdb);
       setMovieBackdrops(backdrops);
     })();
+    if (
+      movie.trailers &&
+      movie.trailers.length > 0 &&
+      movie.trailers[0].results.length > 0
+    ) {
+      setShowTrailers(true);
+    }
   }, []);
 
   return (
-    <ScrollView style={styles.container}>
-      <MovieBackdropCarousel backdrops={movieBackdrops} />
-      <View style={styles.body}>
-        <MovieInfo movie={movie} />
-        <Seperator width="100%" label="Lýsing" />
-        <Text style={styles.description}>{movie.plot}</Text>
-        <Seperator width="100%" label="Miðar" />
-        <View style={styles.showtimesContainer}>
-          <Showtimes
-            showtimes={
-              movie.showtimes.filter(
-                (showtime) => showtime.cinema.id === cinema.id
-              )[0]
-            }
-            cinema={cinema}
-          />
-        </View>
-        {movie.trailers &&
-          movie.trailers.length > 0 &&
-          movie.trailers[0].results.length > 0 && (
-            <>
-              <Seperator width="100%" label="Stiklur" />
-              <MovieTrailerCarousel trailers={movie.trailers[0].results} />
-            </>
+    <View style={styles.background}>
+      <ScrollView>
+        <View style={styles.container}>
+          <MovieBackdropCarousel backdrops={movieBackdrops} />
+          <View style={styles.body}>
+            <MovieInfo movie={movie} />
+            <Seperator width="100%" label="Lýsing" />
+            <Text style={styles.description}>{movie.plot}</Text>
+            <Seperator width="100%" label="Miðar" />
+            <View style={styles.showtimesContainer}>
+              <Showtimes
+                showtimes={
+                  movie.showtimes.filter(
+                    (showtime) => showtime.cinema.id === cinema.id
+                  )[0]
+                }
+                cinema={cinema}
+              />
+            </View>
+            {showTrailers && <Seperator width="100%" label="Stiklur" />}
+          </View>
+          {showTrailers && (
+            <MovieTrailerCarousel trailers={movie.trailers[0].results} />
           )}
-      </View>
-    </ScrollView>
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 

@@ -38,6 +38,10 @@ export default StyleSheet.create({
   timeslot: {
     fontSize: 18,
   },
+  timeslotError: {
+    fontSize: 18,
+    padding: 10,
+  },
   buyButton: {
     borderRadius: 16,
     padding: 8,
