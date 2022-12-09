@@ -5,6 +5,15 @@ export default StyleSheet.create({
     height: 200,
     width: 125,
     marginTop: -75,
+    borderWidth: 1,
+    borderColor: '#FFF',
+    shadowOffset: {
+      height: 1,
+      width: 1,
+    },
+    shadowOpacity: 0.5,
+    shadowColor: '#000',
+    shadowRadius: 1,
   },
   informationContainer: {
     flexDirection: 'row',

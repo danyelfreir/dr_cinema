@@ -14,9 +14,18 @@ export default StyleSheet.create({
     shadowOpacity: 0.75,
     shadowColor: '#000',
   },
+  timeslotTitleContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   timeslotTitle: {
-    fontSize: 20,
-    padding: 10,
+    fontSize: 24,
+    paddingTop: 10,
+  },
+  timeslotSubTitle: {
+    fontSize: 16,
+    color: '#848484',
+    padding: 5,
   },
   timeslotContainer: {
     flexDirection: 'row',

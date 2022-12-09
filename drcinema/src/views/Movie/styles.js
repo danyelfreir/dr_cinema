@@ -5,7 +5,7 @@ const { height: winHeight, width: winWidth } = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: colors.darkBlue,
+    backgroundColor: colors.yaleBlue,
   },
 
   title: {
@@ -27,5 +27,4 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
 });
