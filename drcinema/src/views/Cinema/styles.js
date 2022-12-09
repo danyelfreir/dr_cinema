@@ -7,7 +7,7 @@ export default StyleSheet.create({
     backgroundColor: colors.darkJungleGreen,
   },
   infoContainer: {
-    flex: 0.65,
+    flex: 1,
     alignItems: 'center',
   },
   logoContainer: {
@@ -17,8 +17,8 @@ export default StyleSheet.create({
   },
   movies: {
     position: 'absolute',
-    bottom: 0,
-    height: '50%',
+    bottom: 10,
+    height: '60%',
     width: '100%',
   },
   nameImageContainer: {

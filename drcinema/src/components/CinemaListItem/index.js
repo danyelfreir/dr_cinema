@@ -29,7 +29,6 @@ const CinemaListItem = (info) => {
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
-        <Text style={styles.title}>{cinema.name}</Text>
         <View style={styles.urlContainer}>
           <Pressable
             onPress={() => {
@@ -40,8 +39,11 @@ const CinemaListItem = (info) => {
           </Pressable>
         </View>
       </View>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{cinema.name}</Text>
+      </View>
       <View style={styles.iconContainer}>
-        <AntDesign name="right" size={32} style={styles.icon} />
+        <AntDesign name="right" size={15} style={styles.icon} />
       </View>
     </View>
   );

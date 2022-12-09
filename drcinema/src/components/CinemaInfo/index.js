@@ -55,6 +55,17 @@ const CinemaInfo = (cinemaInfo) => {
             </View>
           </Pressable>
         )}
+        {!!info.website && (
+          <View style={styles.urlContainer}>
+            <Pressable
+              onPress={() => {
+                Linking.openURL(`https://${info.website}`);
+              }}
+            >
+              <Text style={styles.url}>{filterUrl(info.website)}</Text>
+            </Pressable>
+          </View>
+        )}
         {!!info.description && (
           <Pressable onPress={() => setViewDescription(true)}>
             <View style={styles.descrContainer}>
@@ -68,22 +79,12 @@ const CinemaInfo = (cinemaInfo) => {
             </View>
           </Pressable>
         )}
-        {!!info.website && (
-          <View style={styles.urlContainer}>
-            <Pressable
-              onPress={() => {
-                Linking.openURL(`https://${info.website}`);
-              }}
-            >
-              <Text style={styles.url}>{filterUrl(info.website)}</Text>
-            </Pressable>
-          </View>
-        )}
       </View>
       <DescriptionModal
         isVisible={viewDescription}
         closeModal={() => setViewDescription(false)}
         description={filterDescription(info.description)}
+        name={info.name}
       />
     </View>
   );

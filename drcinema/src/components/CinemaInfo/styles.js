@@ -4,9 +4,10 @@ import colors from '../../styles';
 export default StyleSheet.create({
   infoContainer: {
     padding: 10,
-    position: 'absolute',
     width: '100%',
     backgroundColor: colors.yaleBlue,
+    flex: 1,
+    height: '100%',
   },
   titleContainer: {
     alignItems: 'center',
@@ -25,6 +26,7 @@ export default StyleSheet.create({
   addressContainer: {
     flexDirection: 'row',
     paddingBottom: 10,
+    justifyContent: 'center',
   },
   address: {
     fontSize: 22,
@@ -33,25 +35,44 @@ export default StyleSheet.create({
   addressIcon: { paddingRight: 10 },
   phoneContainer: {
     flexDirection: 'row',
-    paddingBottom: 10,
+    justifyContent: 'center',
+    borderRadius: 50,
+    width: '100%',
+    padding: 5,
+    backgroundColor: colors.ruby,
+    marginBottom: 10,
   },
   phone: {
     fontSize: 22,
     color: colors.white,
   },
   phoneIcon: { paddingRight: 10 },
+  urlContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    borderRadius: 50,
+    width: '100%',
+    padding: 5,
+    backgroundColor: colors.ruby,
+    marginBottom: 10,
+  },
   url: {
     paddingVertical: 5,
     fontSize: 22,
-    color: colors.pumpkin,
+    color: colors.white,
   },
   descrContainer: {
     flexDirection: 'row',
-    paddingBottom: 10,
+    justifyContent: 'center',
+    borderRadius: 50,
+    width: '100%',
+    padding: 5,
+    backgroundColor: colors.ruby,
+    marginBottom: 10,
   },
   description: {
     fontSize: 22,
     color: colors.white,
   },
-  infoIcon: { paddingRight: 10 },
+  infoIcon: { padding: 5 },
 });
