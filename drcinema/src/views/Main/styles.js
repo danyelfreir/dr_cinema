@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../styles';
 
 export default StyleSheet.create({
   container: {
@@ -10,13 +11,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 70,
+    backgroundColor: colors.darkJungleGreen,
   },
   buttonContainer: {
     height: 70,
     borderColor: 'grey',
     borderWidth: 2,
-    // paddingBottom: 24,
-    // paddingTop: 24,
     position: 'absolute',
     bottom: 0,
     backgroundColor: 'white',

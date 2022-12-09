@@ -31,6 +31,12 @@ const CinemaInfo = (cinemaInfo) => {
       </View>
       <View style={styles.locationDetails}>
         <View style={styles.addressContainer}>
+          <Entypo
+            name="location"
+            size={20}
+            color="white"
+            style={styles.locationIcon}
+          />
           <Text style={styles.address}>
             {info['address\t'] + ', ' + info.city}
           </Text>
@@ -42,7 +48,7 @@ const CinemaInfo = (cinemaInfo) => {
                 <View style={styles.descrContainer}>
                   <AntDesign
                     name="infocirlceo"
-                    size={24}
+                    size={20}
                     color="white"
                     style={styles.infoIcon}
                   />
@@ -53,7 +59,7 @@ const CinemaInfo = (cinemaInfo) => {
             <View style={styles.phoneContainer}>
               <Ionicons
                 name="call-outline"
-                size={24}
+                size={20}
                 color="white"
                 style={styles.phoneIcon}
               />
@@ -69,7 +75,7 @@ const CinemaInfo = (cinemaInfo) => {
           >
             <View style={styles.urlContainer}>
               <View style={styles.urlIconContainer}>
-                <Feather name="external-link" size={24} color="white" />
+                <Feather name="external-link" size={20} color="white" />
               </View>
               <Text style={styles.url}>{filterUrl(info.website)}</Text>
             </View>

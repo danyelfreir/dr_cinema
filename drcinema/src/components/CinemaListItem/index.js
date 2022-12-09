@@ -1,20 +1,10 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Linking,
-  ImageBackground,
-  onPress,
-  Pressable,
-} from 'react-native';
+import { View, Text, Linking, Pressable } from 'react-native';
 import styles from './styles';
-import { AntDesign } from '@expo/vector-icons';
-import backgroundImage from '../../resources/cinemaBackground.png';
+import { AntDesign, Feather } from '@expo/vector-icons';
 
 const CinemaListItem = (info) => {
   const cinema = info.item;
-  const [isOpen, setIsOpen] = React.useState(false);
-
   const openModal = () => {
     setIsOpen(true);
   };
@@ -29,7 +19,13 @@ const CinemaListItem = (info) => {
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{cinema.name}</Text>
+        </View>
         <View style={styles.urlContainer}>
+          <View style={styles.urlIconContainer}>
+            <Feather name="external-link" size={16} color="white" />
+          </View>
           <Pressable
             onPress={() => {
               Linking.openURL(`https://${cinema.website}`);
@@ -39,11 +35,8 @@ const CinemaListItem = (info) => {
           </Pressable>
         </View>
       </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>{cinema.name}</Text>
-      </View>
       <View style={styles.iconContainer}>
-        <AntDesign name="right" size={20} style={styles.icon} />
+        <AntDesign name="right" size={28} style={styles.icon} />
       </View>
     </View>
   );
