@@ -1,18 +1,19 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../styles';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.yaleBlue,
   },
   header: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'dodgerblue',
+    color: 'white',
     paddingLeft: 10,
   },
   item: {
     margin: 8,
-    width: 180,
+    width: 250,
   },
 });

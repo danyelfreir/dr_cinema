@@ -4,11 +4,11 @@ import colors from '../../styles';
 export default StyleSheet.create({
   container: {
     width: '100%',
-    backgroundColor: colors.darkBlue,
     paddingLeft: 10,
     paddingRight: 10,
+    backgroundColor: colors.darkJungleGreen,
   },
   listItem: {
-    paddingBottom: 10,
+    marginBottom: 10,
   },
 });

@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from './styles';
 import CinemaInfo from '../../components/CinemaInfo';
-import CinemaLogo from '../../components/CinemaLogo';
 import MovieList from '../../components/MovieList';
 
 const Cinema = ({ navigation, route: { params } }) => {
@@ -21,12 +20,20 @@ const Cinema = ({ navigation, route: { params } }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.nameImageContainer}>
+      <View style={styles.infoContainer}>
         <CinemaInfo info={params} />
       </View>
-      <View style={styles.movies}>
-        <MovieList data={movies} cinema={params} navigation={navigation} />
-      </View>
+
+      {!!movies.length > 0 && (
+        <View style={styles.movies}>
+          <MovieList data={movies} cinema={params} navigation={navigation} />
+        </View>
+      )}
+      {movies.length === 0 && (
+        <View style={styles.missingMovies}>
+          <Text style={styles.message}>Engar myndir í sýningu!</Text>
+        </View>
+      )}
     </View>
   );
 };
