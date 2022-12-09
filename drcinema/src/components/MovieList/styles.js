@@ -4,7 +4,7 @@ import colors from '../../styles';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.yaleBlue,
+    // backgroundColor: colors.yaleBlue,
   },
   header: {
     fontSize: 24,

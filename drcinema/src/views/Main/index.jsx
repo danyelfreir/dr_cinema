@@ -24,11 +24,18 @@ const Main = ({ navigation }) => {
     dispatch(fetchAllMovies());
   }, []);
 
-  const {
-    cinemas: { allCinemas },
-    upcoming: { upcomingMovies },
-    movies: { allMovies },
-  } = useSelector((state) => state);
+  const { upcomingMovies, error: upcomingError } = useSelector(
+    (state) => state.upcoming
+  );
+  const { allCinemas, error: cinemaError } = useSelector(
+    (state) => state.cinemas
+  );
+
+  // const {
+  //   cinemas: { allCinemas },
+  //   upcoming: { upcomingMovies },
+  //   movies: { allMovies },
+  // } = useSelector((state) => state);
 
   const cinemasService = new CinemaListService(allCinemas);
 
@@ -52,11 +59,16 @@ const Main = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.content}>
         {visibleContent ? (
-          <CinemaList data={orderedCinemas} navigation={navigation} />
+          <CinemaList
+            data={orderedCinemas}
+            navigation={navigation}
+            error={cinemaError}
+          />
         ) : (
           <UpcomingMoviesCarousel
             onPressFunction={navigation.navigate}
             data={orderedUpcomingMovies}
+            error={upcomingError}
           />
         )}
       </View>

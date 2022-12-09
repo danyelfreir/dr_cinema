@@ -2,8 +2,9 @@ import React from 'react';
 import { View, Text, FlatList, Pressable } from 'react-native';
 import Movie from '../Movie';
 import styles from './styles';
+import ZeroComponent from '../ZeroComponent';
 
-const MovieList = ({ data, cinema, navigation }) => {
+const MovieList = ({ data, cinema, navigation, listEmptyComponent }) => {
   const renderItem = ({ item }) => {
     return (
       <Pressable
@@ -18,10 +19,19 @@ const MovieList = ({ data, cinema, navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Sýningar</Text>
-      <FlatList data={data} horizontal={true} renderItem={renderItem} />
-    </View>
+    // <View style={styles.container}>
+    // <Text style={styles.header}>Sýningar</Text>
+    <FlatList
+      data={data}
+      horizontal={true}
+      renderItem={renderItem}
+      ListEmptyComponent={listEmptyComponent}
+      contentContainerStyle={{
+        flexGrow: 1,
+        justifyContent: 'center',
+      }}
+    />
+    // </View>
   );
 };
 

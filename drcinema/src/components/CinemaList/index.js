@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { View, FlatList, Pressable } from 'react-native';
 import CinemaListItem from '../CinemaListItem';
+import ZeroComponent from '../ZeroComponent';
 import styles from './styles';
 
-const CinemaList = ({ data, navigation }) => {
+const CinemaList = ({ data, navigation, error }) => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -16,6 +17,10 @@ const CinemaList = ({ data, navigation }) => {
           </View>
         )}
         keyExtractor={(item) => item.id}
+        ListEmptyComponent={() => (
+          <ZeroComponent error={error} message="Engin kvikmyndahús tiltæk" />
+        )}
+        // contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
       />
     </View>
   );

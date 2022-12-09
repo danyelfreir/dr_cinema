@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux';
 import styles from './styles';
 import CinemaInfo from '../../components/CinemaInfo';
 import MovieList from '../../components/MovieList';
+import ZeroComponent from '../../components/ZeroComponent';
 
 const Cinema = ({ navigation, route: { params } }) => {
-  const findMyMovies = ({ allMovies }) => {
+  const findMyMovies = (allMovies) => {
     return allMovies.filter((movie) =>
       movie.showtimes.some(
         (show) => show.cinema.id === params.id || show.cinema == params.id
@@ -14,23 +15,31 @@ const Cinema = ({ navigation, route: { params } }) => {
     );
   };
 
-  const movies = findMyMovies(useSelector((state) => state.movies));
+  const { allMovies, error: movieError } = useSelector((state) => state.movies);
+
+  const movies = findMyMovies(allMovies);
+
+  // const movies = findMyMovies(useSelector((state) => state.movies));
+
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
         <CinemaInfo info={params} />
       </View>
 
-      {!!movies.length > 0 && (
-        <View style={styles.movies}>
-          <MovieList data={movies} cinema={params} navigation={navigation} />
-        </View>
-      )}
-      {movies.length === 0 && (
-        <View style={styles.missingMovies}>
-          <Text style={styles.message}>Engar myndir í sýningu!</Text>
-        </View>
-      )}
+      <View style={styles.movies}>
+        <MovieList
+          data={movies}
+          cinema={params}
+          navigation={navigation}
+          listEmptyComponent={() => (
+            <ZeroComponent
+              error={movieError}
+              message="Engar myndir í sýningu!"
+            />
+          )}
+        />
+      </View>
     </View>
   );
 };
