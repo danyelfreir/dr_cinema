@@ -32,15 +32,29 @@ const Main = ({ navigation }) => {
 
   const cinemasService = new CinemaListService(allCinemas);
 
-  const cinemas = cinemasService.sortedCinemas;
+  const orderedCinemas = cinemasService.sortedCinemas;
+
+  const processUpcomingMovies = () => {
+    return upcomingMovies
+      .filter((movie) => {
+        return new Date(movie['release-dateIS']).getTime() > Date.now();
+      })
+      .sort((a, b) => {
+        const aDate = new Date(a['release-dateIS']);
+        const bDate = new Date(b['release-dateIS']);
+        return aDate.getTime() - bDate.getTime();
+      });
+  };
+
+  const orderedUpcomingMovies = processUpcomingMovies();
 
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         {visibleContent ? (
-          <CinemaList data={cinemas} navigation={navigation} />
+          <CinemaList data={orderedCinemas} navigation={navigation} />
         ) : (
-          <UpcomingMoviesCarousel data={upcomingMovies} />
+          <UpcomingMoviesCarousel data={orderedUpcomingMovies} />
         )}
       </View>
       <View style={styles.buttonContainer}>
@@ -48,11 +62,13 @@ const Main = ({ navigation }) => {
           title="Kvikmyndahús"
           onPress={() => setvisibleContent(CINEMAS)}
           active={visibleContent}
+          icon="warehouse"
         />
         <HomeButton
           title="Væntanlegt í bíó"
           onPress={() => setvisibleContent(UPCOMING)}
           active={!visibleContent}
+          icon="camera-burst"
         />
       </View>
     </View>

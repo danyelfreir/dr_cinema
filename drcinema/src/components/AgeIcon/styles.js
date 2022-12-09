@@ -6,7 +6,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     width: 35,
     height: 35,
-    borderRadius: 20,
+    borderRadius: 35,
     margin: 5,
   },
   age: {
