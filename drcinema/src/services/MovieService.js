@@ -13,17 +13,17 @@ export default class MovieService {
     const response = await fetch(`${this.URL}movies/`, {
       headers: this.headers,
     });
-    if (response.status !== 200) {
-      return {
-        movies: [],
-        error: response.message,
-      };
-    }
     const movies = await response.json();
     if (!movies) {
       return {
         movies: [],
         error: 'An error occurred while parsing data. Please try again later',
+      };
+    }
+    if (response.status !== 200) {
+      return {
+        movies: [],
+        error: movies.message,
       };
     }
     return {
