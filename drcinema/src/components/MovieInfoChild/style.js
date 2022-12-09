@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../styles/index'
 
 export default StyleSheet.create({
   informationTextPair: {
@@ -10,13 +11,13 @@ export default StyleSheet.create({
   },
   informationTextKey: {
     width: '47%',
-    color: '#C4C4C4',
+    color: colors.movieLabel,
     fontWeight: 'bold',
     // marginLeft: 20,
   },
   informationTextValue: {
     width: '53%',
-    color: '#C4C4C4',
+    color: colors.movieInfo,
     marginLeft: 5,
     alignSelf: 'flex-end',
   },

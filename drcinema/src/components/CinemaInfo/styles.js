@@ -5,7 +5,7 @@ export default StyleSheet.create({
   infoContainer: {
     padding: 10,
     width: '100%',
-    backgroundColor: colors.yaleBlue,
+    backgroundColor: colors.cinemaInfoBackground,
     flex: 1,
   },
   titleContainer: {
@@ -26,14 +26,17 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: colors.cinemaButtonText,
     marginBottom: 10,
+    height: 45,
+    borderRadius: 50,
   },
   address: {
     fontSize: 18,
-    color: colors.white,
+    color: colors.cinemaButtons,
   },
-  locationIcon: { paddingRight: 10 },
-  addressIcon: { paddingRight: 10 },
+  locationIcon: { paddingRight: 10, color: colors.cinemaButtons },
+  addressIcon: { paddingRight: 10, color: colors.cinemaButtons },
   phoneContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -42,14 +45,17 @@ export default StyleSheet.create({
     width: '100%',
     height: 45,
     padding: 5,
-    backgroundColor: colors.ruby,
+    backgroundColor: colors.cinemaButtonText,
     marginBottom: 10,
   },
   phone: {
     fontSize: 18,
-    color: colors.white,
+    color: colors.cinemaButtons,
   },
-  phoneIcon: { paddingRight: 10 },
+  phoneIcon: {
+    paddingRight: 10,
+    color: colors.cinemaButtons,
+  },
   urlContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -57,15 +63,19 @@ export default StyleSheet.create({
     borderRadius: 50,
     width: '100%',
     height: 45,
-    backgroundColor: colors.ruby,
+    backgroundColor: colors.cinemaButtonText,
     marginBottom: 10,
   },
   url: {
     fontSize: 18,
-    color: colors.white,
+    color: colors.cinemaButtons,
+  },
+  urlIcon: {
+    color: colors.cinemaButtons,
   },
   urlIconContainer: {
     paddingRight: 5,
+    color: colors.cinemaButtons,
   },
   descrContainer: {
     flexDirection: 'row',
@@ -74,13 +84,13 @@ export default StyleSheet.create({
     borderRadius: 50,
     width: '100%',
     height: 45,
-    backgroundColor: colors.ruby,
+    backgroundColor: colors.cinemaButtonText,
     marginBottom: 10,
   },
   description: {
     fontSize: 18,
-    color: colors.white,
+    color: colors.cinemaButtons,
     padding: 5,
   },
-  infoIcon: {},
+  infoIcon: { color: colors.cinemaButtons },
 });

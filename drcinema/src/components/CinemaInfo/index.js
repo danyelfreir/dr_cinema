@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Linking, Pressable, ImageBackground } from 'react-native';
 import { AntDesign, Ionicons, Entypo, Feather } from '@expo/vector-icons';
 import styles from './styles';
+import colors from '../../styles/index';
 import DescriptionModal from '../DescriptionModal';
 
 const CinemaInfo = (cinemaInfo) => {
@@ -75,7 +76,11 @@ const CinemaInfo = (cinemaInfo) => {
           >
             <View style={styles.urlContainer}>
               <View style={styles.urlIconContainer}>
-                <Feather name="external-link" size={20} color="white" />
+                <Feather
+                  name="external-link"
+                  size={20}
+                  color={colors.cinemaButtons}
+                />
               </View>
               <Text style={styles.url}>{filterUrl(info.website)}</Text>
             </View>

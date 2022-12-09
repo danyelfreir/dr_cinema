@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../styles/index';
 
 export default StyleSheet.create({
   container: {
@@ -8,11 +9,11 @@ export default StyleSheet.create({
     height: 30,
     padding: 1,
     margin: 2,
-    backgroundColor: 'dodgerblue',
+    backgroundColor: colors.movieItemGenre,
     // backgroundColor: 'teal',
   },
   tag: {
-    color: 'white',
+    color: colors.movieItemGenreText,
     fontWeight: 'bold',
     fontSize: 12,
     paddingLeft: 2,

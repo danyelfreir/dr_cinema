@@ -19,8 +19,6 @@ const Cinema = ({ navigation, route: { params } }) => {
 
   const movies = findMyMovies(allMovies);
 
-  // const movies = findMyMovies(useSelector((state) => state.movies));
-
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>

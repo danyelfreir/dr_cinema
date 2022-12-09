@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../styles/index';
 
 export default StyleSheet.create({
   container: {
@@ -22,7 +23,7 @@ export default StyleSheet.create({
   description: {
     flex: 1,
     width: '100%',
-    backgroundColor: 'dodgerblue',
+    backgroundColor: colors.movieItemGradient,
   },
   name: {
     flex: 1,

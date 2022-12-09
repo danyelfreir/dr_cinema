@@ -31,12 +31,6 @@ const Main = ({ navigation }) => {
     (state) => state.cinemas
   );
 
-  // const {
-  //   cinemas: { allCinemas },
-  //   upcoming: { upcomingMovies },
-  //   movies: { allMovies },
-  // } = useSelector((state) => state);
-
   const cinemasService = new CinemaListService(allCinemas);
 
   const orderedCinemas = cinemasService.sortedCinemas;
