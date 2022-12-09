@@ -2,16 +2,12 @@ import { StyleSheet } from 'react-native';
 import colors from '../../styles';
 
 export default StyleSheet.create({
-  background: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-    position: 'absolute',
-    width: '100%',
-  },
   infoContainer: {
     padding: 10,
-    backgroundColor: '#38afc2',
+    width: '100%',
+    backgroundColor: colors.yaleBlue,
+    flex: 1,
+    height: '100%',
   },
   titleContainer: {
     alignItems: 'center',
@@ -30,6 +26,7 @@ export default StyleSheet.create({
   addressContainer: {
     flexDirection: 'row',
     paddingBottom: 10,
+    justifyContent: 'center',
   },
   address: {
     fontSize: 22,
@@ -38,25 +35,44 @@ export default StyleSheet.create({
   addressIcon: { paddingRight: 10 },
   phoneContainer: {
     flexDirection: 'row',
-    paddingBottom: 10,
+    justifyContent: 'center',
+    borderRadius: 50,
+    width: '100%',
+    padding: 5,
+    backgroundColor: colors.ruby,
+    marginBottom: 10,
   },
   phone: {
     fontSize: 22,
     color: colors.white,
   },
   phoneIcon: { paddingRight: 10 },
+  urlContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    borderRadius: 50,
+    width: '100%',
+    padding: 5,
+    backgroundColor: colors.ruby,
+    marginBottom: 10,
+  },
   url: {
     paddingVertical: 5,
     fontSize: 22,
-    color: colors.orange,
+    color: colors.white,
   },
   descrContainer: {
     flexDirection: 'row',
-    paddingBottom: 10,
+    justifyContent: 'center',
+    borderRadius: 50,
+    width: '100%',
+    padding: 5,
+    backgroundColor: colors.ruby,
+    marginBottom: 10,
   },
   description: {
     fontSize: 22,
     color: colors.white,
   },
-  infoIcon: { paddingRight: 10 },
+  infoIcon: { padding: 5 },
 });

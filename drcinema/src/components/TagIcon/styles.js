@@ -5,7 +5,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    height: 20,
+    height: 30,
     padding: 1,
     margin: 2,
     backgroundColor: 'dodgerblue',
@@ -14,7 +14,7 @@ export default StyleSheet.create({
   tag: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 10,
+    fontSize: 12,
     paddingLeft: 2,
     paddingRight: 2,
     // letterSpacing: -2,

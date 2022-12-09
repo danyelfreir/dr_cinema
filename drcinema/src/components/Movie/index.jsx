@@ -20,7 +20,6 @@ const Movie = ({ item }) => {
       <LinearGradient
         colors={['transparent', 'black']}
         end={{ x: 0.5, y: 0.9 }}
-        // start={{ x: 0.5, y: 0 }}
         style={styles.description}
       >
         <Text style={styles.name}>

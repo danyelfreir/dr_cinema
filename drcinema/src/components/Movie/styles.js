@@ -15,16 +15,10 @@ export default StyleSheet.create({
   thumbnail: {
     height: '70%',
     width: '100%',
-    // transform: [{ scaleY: 0.8 }],
   },
   description: {
     flex: 1,
-    // bottom: 0,
     width: '100%',
-    // position: 'absolute',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // paddingTop: 60,
     backgroundColor: 'dodgerblue',
   },
   name: {
@@ -35,16 +29,12 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   tags: {
-    flex: 1,
+    flex: 1.5,
     zIndex: 99,
     padding: 5,
     width: '100%',
-    // backgroundColor: 'red',
-    // justifyContent: 'flex-start',
-    // width: '100%',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    // flexWrap: 'nowrap',
     padding: 2,
   },
 });

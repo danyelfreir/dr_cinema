@@ -19,22 +19,31 @@ const CinemaListItem = (info) => {
     setIsOpen(true);
   };
 
+  const regex = /^www./g;
+
+  const filterUrl = (url) => {
+    // filter out www.
+    return url.replace(regex, '');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
-        <Text style={styles.title}>{cinema.name}</Text>
         <View style={styles.urlContainer}>
           <Pressable
             onPress={() => {
               Linking.openURL(`https://${cinema.website}`);
             }}
           >
-            <Text style={styles.url}>{cinema.website}</Text>
+            <Text style={styles.url}>{filterUrl(cinema.website)}</Text>
           </Pressable>
         </View>
       </View>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{cinema.name}</Text>
+      </View>
       <View style={styles.iconContainer}>
-        <AntDesign name="right" size={32} style={styles.icon} />
+        <AntDesign name="right" size={15} style={styles.icon} />
       </View>
     </View>
   );
