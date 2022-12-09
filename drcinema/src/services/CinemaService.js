@@ -13,17 +13,17 @@ export default class CinemaService {
     const response = await fetch(`${this.URL}`, {
       headers: this.headers,
     });
-    if (response.status !== 200) {
-      return {
-        cinemas: [],
-        error: response.message,
-      };
-    }
     const cinemas = await response.json();
     if (!cinemas) {
       return {
         cinemas: [],
         error: 'An error occurred while parsing data. Please try again later',
+      };
+    }
+    if (response.status !== 200) {
+      return {
+        cinemas: [],
+        error: cinemas.message,
       };
     }
     return {

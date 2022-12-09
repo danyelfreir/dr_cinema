@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import colors from '../../styles';
 
 export default StyleSheet.create({
@@ -14,9 +14,10 @@ export default StyleSheet.create({
     backgroundColor: colors.darkJungleGreen,
   },
   buttonContainer: {
-    height: 70,
+    height: Platform.OS === 'ios' ? 100 : 70,
     borderColor: 'grey',
     borderWidth: 2,
+    paddingBottom: Platform.OS === 'ios' && 24,
     position: 'absolute',
     bottom: 0,
     backgroundColor: 'white',

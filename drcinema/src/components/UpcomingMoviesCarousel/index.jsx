@@ -4,11 +4,12 @@ import styles from './styles';
 import Carousel from 'react-native-snap-carousel';
 import UpcomingMovieItem from '../UpcomingMovieItem';
 
-const UpcomingMoviesCarousel = ({ data }) => {
+const UpcomingMoviesCarousel = ({ onPressFunction, data }) => {
   const { width: width } = Dimensions.get('screen');
 
   const renderItem = ({ item, index }) => {
-    return <UpcomingMovieItem {...item} />;
+    // return <UpcomingMovieItem {...item} />;
+    return <UpcomingMovieItem movie={item} onPressFunction={onPressFunction} />;
   };
 
   return (
