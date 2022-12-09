@@ -15,10 +15,6 @@ const Cinema = ({ navigation, route: { params } }) => {
   const movies = findMyMovies(useSelector((state) => state.movies));
   // console.log(erro1);
 
-  useEffect(() => {
-    navigation.setOptions({ title: params.name });
-  }, []);
-
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>

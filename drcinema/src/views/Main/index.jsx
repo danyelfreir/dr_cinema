@@ -8,6 +8,7 @@ import styles from './styles.js';
 import UpcomingMoviesCarousel from '../../components/UpcomingMoviesCarousel';
 import HomeButton from '../../components/HomeButton';
 import CinemaList from '../../components/CinemaList';
+import CinemaListService from '../../services/CinemaListService';
 
 const CINEMAS = true;
 const UPCOMING = false;
@@ -29,6 +30,10 @@ const Main = ({ navigation }) => {
     movies: { allMovies },
   } = useSelector((state) => state);
 
+  const cinemasService = new CinemaListService(allCinemas);
+
+  const orderedCinemas = cinemasService.sortedCinemas;
+
   const processUpcomingMovies = () => {
     return upcomingMovies
       .filter((movie) => {
@@ -47,7 +52,7 @@ const Main = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.content}>
         {visibleContent ? (
-          <CinemaList data={allCinemas} navigation={navigation} />
+          <CinemaList data={orderedCinemas} navigation={navigation} />
         ) : (
           <UpcomingMoviesCarousel data={orderedUpcomingMovies} />
         )}
