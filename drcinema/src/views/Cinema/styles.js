@@ -10,19 +10,12 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  logoContainer: {
-    width: '100%',
-    height: '10%',
-    justifyContent: 'center',
-  },
   movies: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 30,
     height: '60%',
     width: '100%',
-  },
-  nameImageContainer: {
-    padding: 10,
+    // marginBottom: 30,
   },
   message: {
     fontSize: 24,

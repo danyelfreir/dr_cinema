@@ -12,8 +12,11 @@ export default StyleSheet.create({
     right: 0,
     top: 0,
   },
+  image: {
+    flex: 2,
+  },
   thumbnail: {
-    height: '70%',
+    height: '100%',
     width: '100%',
   },
   description: {

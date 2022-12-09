@@ -7,6 +7,8 @@ export default {
   black: '#000',
   orange: '#ee6c4d',
   darkBlue: '#293241',
+  yellow: 'gold',
+  green: 'green',
   blue: 'dodgerblue',
 
   color1: 'rgb(255, 0, 146)',
