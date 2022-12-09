@@ -6,7 +6,6 @@ const Stack = createStackNavigator();
 import Styles from './styles';
 import Main from '../views/Main';
 import Cinema from '../views/Cinema';
-import CinemaList from '../components/CinemaList';
 import Movie from '../views/Movie';
 
 const Router = () => {
