@@ -43,7 +43,7 @@ const CinemaListItem = (info) => {
         <Text style={styles.title}>{cinema.name}</Text>
       </View>
       <View style={styles.iconContainer}>
-        <AntDesign name="right" size={15} style={styles.icon} />
+        <AntDesign name="right" size={20} style={styles.icon} />
       </View>
     </View>
   );
