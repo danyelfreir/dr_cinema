@@ -11,7 +11,7 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 70,
+    marginBottom: Platform.OS === 'ios' ? 100 : 70,
     backgroundColor: colors.darkJungleGreen,
   },
   buttonContainer: {

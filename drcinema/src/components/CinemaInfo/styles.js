@@ -74,8 +74,8 @@ export default StyleSheet.create({
     color: colors.cinemaButtons,
   },
   urlIconContainer: {
-    paddingRight: 5,
     color: colors.cinemaButtons,
+    paddingRight: 10,
   },
   descrContainer: {
     flexDirection: 'row',
