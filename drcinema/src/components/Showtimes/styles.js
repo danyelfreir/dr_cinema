@@ -3,16 +3,29 @@ import colors from '../../styles/index';
 
 export default StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: '#000',
     backgroundColor: '#FFF',
     borderRadius: 20,
     width: '80%',
     alignItems: 'center',
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.75,
+    shadowColor: '#000',
+  },
+  timeslotTitleContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   timeslotTitle: {
-    fontSize: 20,
-    padding: 10,
+    fontSize: 24,
+    paddingTop: 10,
+  },
+  timeslotSubTitle: {
+    fontSize: 16,
+    color: '#848484',
+    padding: 5,
   },
   timeslotContainer: {
     flexDirection: 'row',
