@@ -5,14 +5,21 @@ export default StyleSheet.create({
   container: {
     position: 'absolute',
     width: '100%',
-    height: '65%',
-    borderColor: 'white',
-    borderWidth: 1,
+    marginVertical: 60,
     padding: 10,
-    backgroundColor: 'colors.darkBlue',
+    backgroundColor: colors.yaleBlue,
+  },
+  titleContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 26,
+    color: colors.white,
+    paddingBottom: 10,
   },
   description: {
     fontSize: 16,
-    color: '#e5e5e5',
+    color: colors.white,
   },
 });
