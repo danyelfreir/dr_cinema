@@ -31,12 +31,6 @@ const CinemaInfo = (cinemaInfo) => {
       </View>
       <View style={styles.locationDetails}>
         <View style={styles.addressContainer}>
-          <Entypo
-            name="address"
-            size={24}
-            color="white"
-            style={styles.addressIcon}
-          />
           <Text style={styles.address}>
             {info['address\t'] + ', ' + info.city}
           </Text>
