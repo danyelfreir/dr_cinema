@@ -44,5 +44,6 @@ export default StyleSheet.create({
   },
   titleContainer: {
     width: '55%',
+    justifyContent: 'center',
   },
 });

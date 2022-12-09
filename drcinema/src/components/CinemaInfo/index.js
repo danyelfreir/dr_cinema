@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, Linking, Pressable, ImageBackground } from 'react-native';
-import { AntDesign, Ionicons, Entypo } from '@expo/vector-icons';
+import { AntDesign, Ionicons, Entypo, Feather } from '@expo/vector-icons';
 import styles from './styles';
-import cinemaInfoBackground from '../../resources/cinemaInfoBackground.png';
 import DescriptionModal from '../DescriptionModal';
 
 const CinemaInfo = (cinemaInfo) => {
@@ -44,6 +43,19 @@ const CinemaInfo = (cinemaInfo) => {
         </View>
         {!!info.phone && (
           <Pressable onPress={() => Linking.openURL(`tel:${info.phone}`)}>
+            {!!info.description && (
+              <Pressable onPress={() => setViewDescription(true)}>
+                <View style={styles.descrContainer}>
+                  <AntDesign
+                    name="infocirlceo"
+                    size={24}
+                    color="white"
+                    style={styles.infoIcon}
+                  />
+                  <Text style={styles.description}>Nánari upplýsingar</Text>
+                </View>
+              </Pressable>
+            )}
             <View style={styles.phoneContainer}>
               <Ionicons
                 name="call-outline"
@@ -56,26 +68,16 @@ const CinemaInfo = (cinemaInfo) => {
           </Pressable>
         )}
         {!!info.website && (
-          <View style={styles.urlContainer}>
-            <Pressable
-              onPress={() => {
-                Linking.openURL(`https://${info.website}`);
-              }}
-            >
+          <Pressable
+            onPress={() => {
+              Linking.openURL(`https://${info.website}`);
+            }}
+          >
+            <View style={styles.urlContainer}>
+              <View style={styles.urlIconContainer}>
+                <Feather name="external-link" size={24} color="white" />
+              </View>
               <Text style={styles.url}>{filterUrl(info.website)}</Text>
-            </Pressable>
-          </View>
-        )}
-        {!!info.description && (
-          <Pressable onPress={() => setViewDescription(true)}>
-            <View style={styles.descrContainer}>
-              <AntDesign
-                name="infocirlceo"
-                size={24}
-                color="white"
-                style={styles.infoIcon}
-              />
-              <Text style={styles.description}>Nánari upplýsingar</Text>
             </View>
           </Pressable>
         )}
