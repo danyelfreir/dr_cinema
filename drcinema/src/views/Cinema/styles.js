@@ -15,6 +15,7 @@ export default StyleSheet.create({
     bottom: 30,
     height: '60%',
     width: '100%',
+    // marginBottom: 30,
   },
   message: {
     fontSize: 24,

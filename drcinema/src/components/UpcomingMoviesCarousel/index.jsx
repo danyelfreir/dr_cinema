@@ -19,9 +19,6 @@ const UpcomingMoviesCarousel = ({ data }) => {
         width: '100%',
       }}
     >
-      <View style={styles.title}>
-        <Text style={styles.titleText}>Væntaleg í Kvikmyndahús</Text>
-      </View>
       <Carousel
         itemWidth={250}
         sliderWidth={width}

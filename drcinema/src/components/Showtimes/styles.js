@@ -39,8 +39,11 @@ export default StyleSheet.create({
     fontSize: 18,
   },
   buyButton: {
+    borderRadius: 16,
+    padding: 8,
     fontSize: 20,
     fontWeight: 'bold',
-    color: colors.blue,
+    color: colors.white,
+    backgroundColor: 'green',
   },
 });
