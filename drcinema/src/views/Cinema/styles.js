@@ -8,12 +8,13 @@ export default StyleSheet.create({
     flexDirection: 'column',
   },
   infoContainer: {
-    flex: 0.4,
+    flex: 0.35,
     alignItems: 'center',
   },
   movies: {
-    flex: 0.5,
+    flex: 0.65,
     width: '100%',
+    marginBottom: 10,
     // backgroundColor: colors.,
     // backgroundColor: 'red',
     // position: 'absolute',
