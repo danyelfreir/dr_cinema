@@ -40,12 +40,14 @@ const Movie = ({ navigation, route: { params } }) => {
             cinema={cinema}
           />
         </View>
-        {movie.trailers && movie.trailers[0].results.length > 0 && (
-          <>
-            <Seperator width="100%" label="Stiklur" />
-            <MovieTrailerCarousel trailers={movie.trailers[0].results} />
-          </>
-        )}
+        {movie.trailers &&
+          movie.trailers.length > 0 &&
+          movie.trailers[0].results.length > 0 && (
+            <>
+              <Seperator width="100%" label="Stiklur" />
+              <MovieTrailerCarousel trailers={movie.trailers[0].results} />
+            </>
+          )}
       </View>
     </ScrollView>
   );

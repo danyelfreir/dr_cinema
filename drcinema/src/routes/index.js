@@ -17,6 +17,7 @@ const Router = () => {
           name="Home"
           component={Main}
           options={{
+            ...Styles.navBar,
             title: 'Dr.Cinema',
             ...Styles.navBar,
           }}

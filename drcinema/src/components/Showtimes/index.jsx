@@ -8,7 +8,10 @@ const Showtimes = ({ showtimes, cinema }) => {
     <View style={styles.container}>
       {showtimes && (
         <View>
-          <Text style={styles.timeslotTitle}>Sýningar í {cinema.name}</Text>
+          <View style={styles.timeslotTitleContainer}>
+            <Text style={styles.timeslotTitle}>Sýningar</Text>
+            <Text style={styles.timeslotSubTitle}>{cinema.name}</Text>
+          </View>
           <Seperator width={200} />
           {showtimes.schedule.map((timeslot, index) => {
             const timeslots = timeslot.time.split(' ');
