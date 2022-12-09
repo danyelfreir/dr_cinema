@@ -5,9 +5,11 @@ const { height: winHeight, width: winWidth } = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
+    // backgroundColor: colors.yaleBlue,
+  },
+  background: {
     backgroundColor: colors.yaleBlue,
   },
-
   title: {
     fontSize: 28,
     fontWeight: 'bold',

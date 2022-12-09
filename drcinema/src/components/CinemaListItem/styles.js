@@ -9,6 +9,7 @@ export default StyleSheet.create({
     marginTop: 10,
     borderRadius: 50,
     flexDirection: 'row',
+    alignItems: 'center',
   },
   infoContainer: {
     flex: 1,
