@@ -8,6 +8,7 @@ const MovieInfo = ({ movie }) => {
     <View style={styles.informationContainer}>
       <Image style={styles.poster} source={{ uri: movie.poster }} />
       <View style={styles.informationTextContainer}>
+        <MovieInfoChild infoKey={'Titill'} infoValue={movie.title} />
         {movie.year && (
           <MovieInfoChild infoKey={'Útgáfuár'} infoValue={movie.year} />
         )}
