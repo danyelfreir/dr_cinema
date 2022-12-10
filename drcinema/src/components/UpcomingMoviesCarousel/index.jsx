@@ -29,8 +29,6 @@ const UpcomingMoviesCarousel = ({ onPressFunction, data, error }) => {
         ListEmptyComponent={() => (
           <ZeroComponent error={error} message={'Engar myndir á næstunni'} />
         )}
-        initialNumToRender={2}
-        maxToRenderPerBatch={5}
       />
     </View>
   );

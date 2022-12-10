@@ -10,7 +10,6 @@ const Cinema = ({ navigation, route: { params } }) => {
   const findMyMovies = (allMovies) => {
     return allMovies.filter((movie) =>
       movie.showtimes.some((show) => {
-        // console.log(show);
         return (
           show.cinema.id == params.id || parseInt(show.cinema) == params.id
         );

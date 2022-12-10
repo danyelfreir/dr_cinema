@@ -19,14 +19,12 @@ export default class UpcomingService {
       };
     }
     if (!upcomingMovies) {
-      console.log('case 1');
       return {
         upcomingMovies: [],
         error: 'An error occurred while parsing data. Please try again later',
       };
     }
     if (response.status !== 200) {
-      console.log('case 2');
       return {
         upcomingMovies: [],
         error: upcomingMovies.message,
