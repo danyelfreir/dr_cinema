@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Linking, Pressable, ImageBackground } from 'react-native';
 import { AntDesign, Ionicons, Entypo, Feather } from '@expo/vector-icons';
 import styles from './styles';
+import colors from '../../styles/index';
 import DescriptionModal from '../DescriptionModal';
 
 const CinemaInfo = (cinemaInfo) => {
@@ -28,59 +29,49 @@ const CinemaInfo = (cinemaInfo) => {
     <View style={styles.infoContainer}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{info.name}</Text>
-      </View>
-      <View style={styles.locationDetails}>
         <View style={styles.addressContainer}>
           <Entypo
             name="location"
             size={20}
             color="white"
-            style={styles.locationIcon}
+            style={styles.addressIcon}
           />
           <Text style={styles.address}>
             {info['address\t'] + ', ' + info.city}
           </Text>
         </View>
-        {!!info.phone && (
-          <Pressable onPress={() => Linking.openURL(`tel:${info.phone}`)}>
-            {!!info.description && (
-              <Pressable onPress={() => setViewDescription(true)}>
-                <View style={styles.descrContainer}>
-                  <AntDesign
-                    name="infocirlceo"
-                    size={20}
-                    color="white"
-                    style={styles.infoIcon}
-                  />
-                  <Text style={styles.description}>Nánari upplýsingar</Text>
-                </View>
-              </Pressable>
-            )}
-            <View style={styles.phoneContainer}>
-              <Ionicons
-                name="call-outline"
-                size={20}
-                color="white"
-                style={styles.phoneIcon}
-              />
-              <Text style={styles.phone}>{info.phone}</Text>
+      </View>
+      <View style={styles.buttonContainer}>
+        {!!info.description && (
+          <Pressable onPress={() => setViewDescription(true)}>
+            <View style={styles.bigButton}>
+              <AntDesign name="infocirlceo" size={20} style={styles.icon} />
+              <Text style={styles.buttonText}>Nánari upplýsingar</Text>
             </View>
           </Pressable>
         )}
-        {!!info.website && (
-          <Pressable
-            onPress={() => {
-              Linking.openURL(`https://${info.website}`);
-            }}
-          >
-            <View style={styles.urlContainer}>
-              <View style={styles.urlIconContainer}>
-                <Feather name="external-link" size={20} color="white" />
+        <View style={styles.contactInfoContainer}>
+          {!!info.phone && (
+            <Pressable onPress={() => Linking.openURL(`tel:${info.phone}`)}>
+              <View style={styles.smallButton}>
+                <Ionicons name="call-outline" size={20} style={styles.icon} />
+                <Text style={styles.buttonText}>{info.phone}</Text>
               </View>
-              <Text style={styles.url}>{filterUrl(info.website)}</Text>
-            </View>
-          </Pressable>
-        )}
+            </Pressable>
+          )}
+          {!!info.website && (
+            <Pressable
+              onPress={() => {
+                Linking.openURL(`https://${info.website}`);
+              }}
+            >
+              <View style={styles.smallButton}>
+                <Feather name="external-link" size={20} style={styles.icon} />
+                <Text style={styles.buttonText}>{filterUrl(info.website)}</Text>
+              </View>
+            </Pressable>
+          )}
+        </View>
       </View>
       <DescriptionModal
         isVisible={viewDescription}

@@ -16,6 +16,6 @@ export default StyleSheet.create({
   label: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: colors.gray,
+    color: colors.movieLabel,
   },
 });

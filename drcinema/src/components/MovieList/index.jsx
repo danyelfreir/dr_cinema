@@ -19,8 +19,8 @@ const MovieList = ({ data, cinema, navigation, listEmptyComponent }) => {
   };
 
   return (
-    // <View style={styles.container}>
-    // <Text style={styles.header}>Sýningar</Text>
+    <View style={styles.container}>
+    <Text style={styles.header}>Sýningar</Text>
     <FlatList
       data={data}
       horizontal={true}
@@ -31,7 +31,7 @@ const MovieList = ({ data, cinema, navigation, listEmptyComponent }) => {
         justifyContent: 'center',
       }}
     />
-    // </View>
+     </View>
   );
 };
 

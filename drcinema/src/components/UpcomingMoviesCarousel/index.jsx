@@ -9,7 +9,6 @@ const UpcomingMoviesCarousel = ({ onPressFunction, data, error }) => {
   const { width: width } = Dimensions.get('screen');
 
   const renderItem = ({ item, index }) => {
-    // return <UpcomingMovieItem {...item} />;
     return <UpcomingMovieItem movie={item} onPressFunction={onPressFunction} />;
   };
 

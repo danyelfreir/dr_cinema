@@ -19,7 +19,7 @@ const MovieInfo = ({ movie }) => {
         )}
         {movie.certificateIS && (
           <MovieInfoChild
-            infoKey={'Aldurstakmark:'}
+            infoKey={'Aldurs-\ntakmark:'}
             infoValue={movie.certificateIS}
           />
         )}

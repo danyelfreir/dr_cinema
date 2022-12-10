@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { View, FlatList, Pressable } from 'react-native';
 import CinemaListItem from '../CinemaListItem';
 import ZeroComponent from '../ZeroComponent';
+import Seperator from '../Seperator';
 import styles from './styles';
+import colors from '../../styles/index';
 
 const CinemaList = ({ data, navigation, error }) => {
   return (
@@ -17,10 +19,15 @@ const CinemaList = ({ data, navigation, error }) => {
           </View>
         )}
         keyExtractor={(item) => item.id}
+        ItemSeparatorComponent={() => (
+          <Seperator
+            width="125%"
+            style={{ line: colors.beauBlue }}
+          />
+        )}
         ListEmptyComponent={() => (
           <ZeroComponent error={error} message="Engin kvikmyndahús tiltæk" />
         )}
-        // contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
       />
     </View>
   );

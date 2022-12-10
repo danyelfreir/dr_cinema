@@ -17,7 +17,7 @@ const Router = () => {
           component={Main}
           options={{
             ...Styles.navBar,
-            title: 'Dr.Cinema',
+            title: 'Dr. Cinema',
             ...Styles.navBar,
           }}
         />

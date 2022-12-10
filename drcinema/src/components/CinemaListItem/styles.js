@@ -5,7 +5,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: colors.yaleBlue,
+    backgroundColor: colors.cinemaListItemBackground,
     marginTop: 8,
     flexDirection: 'row',
   },
@@ -21,11 +21,11 @@ export default StyleSheet.create({
     marginRight: 15,
   },
   icon: {
-    color: colors.magnolia,
+    color: colors.cinemaListItemTitle,
   },
   title: {
     fontSize: 28,
-    color: colors.magnolia,
+    color: colors.cinemaListItemTitle,
   },
   titleContainer: {
     width: '75%',
@@ -33,10 +33,11 @@ export default StyleSheet.create({
     marginLeft: 5,
   },
   urlContainer: {
-    width: '45%',
+    width: '50%',
+    // justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
-    backgroundColor: colors.ruby,
+    backgroundColor: colors.cinemaListItemUrlButton,
     height: 35,
     marginTop: 5,
     flexDirection: 'row',
@@ -44,7 +45,7 @@ export default StyleSheet.create({
   },
   url: {
     fontSize: 16,
-    color: colors.white,
+    color: colors.cinemaListItemUrl,
   },
   urlIconContainer: {
     paddingRight: 5,
