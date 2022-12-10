@@ -12,6 +12,12 @@ export default class UpcomingService {
   async getUpcomingMovies() {
     const response = await fetch(`${this.URL}`, { headers: this.headers });
     const upcomingMovies = await response.json();
+    if (upcomingMovies.error) {
+      return {
+        upcomingMovies: [],
+        error: upcomingMovies.message,
+      };
+    }
     if (!upcomingMovies) {
       return {
         upcomingMovies: [],
