@@ -14,6 +14,12 @@ export default class MovieService {
       headers: this.headers,
     });
     let movies = await response.json();
+    if (movies.error) {
+      return {
+        movies: [],
+        error: movies.message,
+      };
+    }
     if (!movies) {
       return {
         movies: [],

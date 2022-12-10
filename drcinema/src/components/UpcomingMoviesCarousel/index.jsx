@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, memo } from 'react';
 import { View, Text, Image, Dimensions } from 'react-native';
 import styles from './styles';
 import Carousel from 'react-native-snap-carousel';
@@ -30,6 +30,8 @@ const UpcomingMoviesCarousel = ({ onPressFunction, data, error }) => {
         ListEmptyComponent={() => (
           <ZeroComponent error={error} message={'Engar myndir á næstunni'} />
         )}
+        initialNumToRender={2}
+        maxToRenderPerBatch={5}
       />
     </View>
   );

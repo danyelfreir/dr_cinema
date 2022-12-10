@@ -14,6 +14,12 @@ export default class CinemaService {
       headers: this.headers,
     });
     const cinemas = await response.json();
+    if (cinemas.error) {
+      return {
+        cinemas: [],
+        error: cinemas.message,
+      };
+    }
     if (!cinemas) {
       return {
         cinemas: [],

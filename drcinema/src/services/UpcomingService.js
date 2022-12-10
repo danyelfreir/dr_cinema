@@ -12,13 +12,21 @@ export default class UpcomingService {
   async getUpcomingMovies() {
     const response = await fetch(`${this.URL}`, { headers: this.headers });
     const upcomingMovies = await response.json();
+    if (upcomingMovies.error) {
+      return {
+        upcomingMovies: [],
+        error: upcomingMovies.message,
+      };
+    }
     if (!upcomingMovies) {
+      console.log('case 1');
       return {
         upcomingMovies: [],
         error: 'An error occurred while parsing data. Please try again later',
       };
     }
     if (response.status !== 200) {
+      console.log('case 2');
       return {
         upcomingMovies: [],
         error: upcomingMovies.message,

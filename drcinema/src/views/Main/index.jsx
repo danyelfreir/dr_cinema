@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchUpcomingMovies from '../../redux/actions/UpcomingMovies/fetchUpcomingMovies';
 import fetchAllMovies from '../../redux/actions/Movies/fetchAllMovies';
@@ -30,12 +30,6 @@ const Main = ({ navigation }) => {
   const { allCinemas, error: cinemaError } = useSelector(
     (state) => state.cinemas
   );
-
-  // const {
-  //   cinemas: { allCinemas },
-  //   upcoming: { upcomingMovies },
-  //   movies: { allMovies },
-  // } = useSelector((state) => state);
 
   const cinemasService = new CinemaListService(allCinemas);
 

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, memo, useEffect } from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import styles from './styles';
 import { LinearGradient } from 'expo-linear-gradient';
 import PlayTrailerButton from '../PlayTrailerButton';
-import * as Linking from 'expo-linking';
 import TrailerModal from '../TrailerModal';
 
 const UpcomingMovieItem = ({ movie, onPressFunction }) => {
+  const [trailer, setTrailer] = useState('');
   const [viewTrailer, setViewTrailer] = useState(false);
 
   const formatDate = (date) => {
@@ -14,15 +14,17 @@ const UpcomingMovieItem = ({ movie, onPressFunction }) => {
     return `${x[2]}.${x[1]}.${x[0]}`;
   };
 
+  useEffect(() => {
+    setTrailer(getTrailer());
+  }, []);
+
   const getTrailer = () => {
     if (movie.trailers.length > 0) {
-      const trailers = movie.trailers[0].results.map((item) => item.key); //TODO
+      const trailers = movie.trailers[0].results.map((item) => item.key);
       if (trailers.length < 1) return ''; // no url
       return trailers[0];
     } else return '';
   };
-
-  const trailer = getTrailer();
 
   const newDate = formatDate(movie['release-dateIS']);
 
@@ -58,4 +60,9 @@ const UpcomingMovieItem = ({ movie, onPressFunction }) => {
   );
 };
 
-export default UpcomingMovieItem;
+const compare = (prev, next) => {
+  if (prev.movie !== next.movie) return false;
+  return true;
+};
+
+export default memo(UpcomingMovieItem, compare);
