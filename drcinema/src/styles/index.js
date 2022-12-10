@@ -33,4 +33,8 @@ export default {
   modalBackground: colors.beauBlue,
   modalCloseButton: colors.tyrianPurple,
   playTrailerButton: colors.majorelleBlue,
+  green: 'green',
+  yellow: 'gold',
+  red: 'red',
+  orange: 'orange',
 };
