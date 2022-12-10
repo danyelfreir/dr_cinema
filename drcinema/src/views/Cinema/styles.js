@@ -4,8 +4,8 @@ import colors from '../../styles';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: colors.darkJungleGreen,
     flexDirection: 'column',
+    backgroundColor: colors.background,
   },
   infoContainer: {
     flex: 0.35,
@@ -15,14 +15,6 @@ export default StyleSheet.create({
     flex: 0.65,
     width: '100%',
     marginBottom: 10,
-    // backgroundColor: colors.,
-    // backgroundColor: 'red',
-    // position: 'absolute',
-    // bottom: 30,
-    // height: '60%',
-    // width: '100%',
-
-    // marginBottom: 30,
-    // paddingBottom: 30,
+    paddingBottom: 10,
   },
 });

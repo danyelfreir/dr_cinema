@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Pressable } from 'react-native';
 import Modal from 'react-native-modal';
 import styles from './styles';
 
@@ -19,10 +19,13 @@ const DescriptionModal = ({ isVisible, closeModal, description, name }) => {
     >
       <View style={styles.container}>
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>Um {name}</Text>
+          <Text style={styles.title}>{name}</Text>
         </View>
         <Text style={styles.description}>{description}</Text>
-        <Button title="Loka" onPress={closeModal} />
+        <Pressable onPress={closeModal}>
+          <Text style={styles.closeButton}>Loka</Text>
+        </Pressable>
+        {/* <Button title="Loka" onPress={closeModal} /> */}
       </View>
     </Modal>
   );

@@ -1,12 +1,20 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import colors from '../../styles';
+
+const { width } = Dimensions.get('window');
 
 export default StyleSheet.create({
   infoContainer: {
     padding: 10,
     width: '100%',
-    backgroundColor: colors.yaleBlue,
-    flex: 1,
+    flex: 2,
+    paddingTop: 20,
+    paddingBottom: 30,
+    justifyContent: 'space-between',
+  },
+  contactInfoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   titleContainer: {
     alignItems: 'center',
@@ -16,11 +24,38 @@ export default StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     color: colors.white,
-    paddingBottom: 10,
   },
-  locationDetails: {
-    flexDirection: 'column',
+  icon: {
+    paddingRight: 10,
+    color: colors.cinemaButtons,
+  },
+  buttonContainer: {
+    width: '100%',
     justifyContent: 'space-between',
+    height: 100,
+  },
+  bigButton: {
+    backgroundColor: colors.cinemaButtonText,
+    flexDirection: 'row',
+    height: 45,
+    width: '100%',
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  smallButton: {
+    backgroundColor: colors.cinemaButtonText,
+    flexDirection: 'row',
+    height: 45,
+    width: width / 2.2,
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+  },
+  buttonText: {
+    fontSize: 18,
+    color: colors.cinemaButtons,
   },
   addressContainer: {
     flexDirection: 'row',
@@ -30,57 +65,10 @@ export default StyleSheet.create({
   },
   address: {
     fontSize: 18,
-    color: colors.white,
+    color: colors.cinemaAddress,
   },
-  locationIcon: { paddingRight: 10 },
-  addressIcon: { paddingRight: 10 },
-  phoneContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 50,
-    width: '100%',
-    height: 45,
-    padding: 5,
-    backgroundColor: colors.ruby,
-    marginBottom: 10,
-  },
-  phone: {
-    fontSize: 18,
-    color: colors.white,
-  },
-  phoneIcon: { paddingRight: 10 },
-  urlContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 50,
-    width: '100%',
-    height: 45,
-    backgroundColor: colors.ruby,
-    marginBottom: 10,
-  },
-  url: {
-    fontSize: 18,
-    color: colors.white,
-  },
-  urlIconContainer: {
+  addressIcon: {
     paddingRight: 10,
+    color: colors.cinemaAddressIcon,
   },
-  descrContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 50,
-    width: '100%',
-    height: 45,
-    backgroundColor: colors.ruby,
-    marginBottom: 10,
-  },
-  description: {
-    fontSize: 18,
-    color: colors.white,
-    padding: 5,
-  },
-  infoIcon: {},
 });

@@ -8,9 +8,8 @@ export default StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.92)',
   },
   dotContainer: {
-    marginTop: -100,
+    marginTop: -75,
   },
 });

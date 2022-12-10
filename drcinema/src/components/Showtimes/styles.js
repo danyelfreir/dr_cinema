@@ -47,7 +47,7 @@ export default StyleSheet.create({
     padding: 8,
     fontSize: 20,
     fontWeight: 'bold',
-    color: colors.white,
-    backgroundColor: 'green',
+    color: colors.buyTicketButtonText,
+    backgroundColor: colors.buyTicketButton,
   },
 });
