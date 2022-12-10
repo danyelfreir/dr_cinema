@@ -7,6 +7,9 @@ export default StyleSheet.create({
       backgroundColor: colors.navBarBackground,
     },
     headerTintColor: colors.navBarTitle,
+    headerTitleStyle: {
+      fontSize: 18,
+    },
     headerTitleAlign: 'center',
   },
   searchIcon: {

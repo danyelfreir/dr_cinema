@@ -16,8 +16,8 @@ export default StyleSheet.create({
   },
   buttonContainer: {
     height: Platform.OS === 'ios' ? 100 : 70,
-    borderColor: 'grey',
-    borderWidth: 2,
+    borderColor: 'lightgrey',
+    borderWidth: 1,
     paddingBottom: Platform.OS === 'ios' ? 24 : 0,
     position: 'absolute',
     bottom: 0,

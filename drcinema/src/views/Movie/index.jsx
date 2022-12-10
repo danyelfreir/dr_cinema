@@ -46,7 +46,9 @@ const Movie = ({ navigation, route: { params } }) => {
                   <Showtimes
                     showtimes={
                       movie.showtimes.filter(
-                        (showtime) => showtime.cinema.id === cinema.id
+                        (showtime) =>
+                          showtime.cinema.id === cinema.id ||
+                          showtime.cinema == cinema.id
                       )[0]
                     }
                     cinema={cinema}

@@ -33,7 +33,8 @@ export default StyleSheet.create({
     marginLeft: 5,
   },
   urlContainer: {
-    width: '45%',
+    width: '50%',
+    // justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
     backgroundColor: colors.cinemaListItemUrlButton,

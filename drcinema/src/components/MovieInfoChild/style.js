@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import colors from '../../styles/index'
+import colors from '../../styles/index';
 
 export default StyleSheet.create({
   informationTextPair: {
@@ -7,16 +7,14 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     marginLeft: 10,
     marginRight: 10,
-    marginBottom: 2,
+    marginBottom: 4,
   },
   informationTextKey: {
-    width: '47%',
     color: colors.movieLabel,
     fontWeight: 'bold',
-    // marginLeft: 20,
   },
   informationTextValue: {
-    width: '53%',
+    width: '60%',
     color: colors.movieInfo,
     marginLeft: 5,
     alignSelf: 'flex-end',
